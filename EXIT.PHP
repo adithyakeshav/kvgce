@@ -85,9 +85,9 @@
                         <li>
                             <?php
                             if(isset($_SESSION['user']))
-                                echo '<a href="login.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>';
+                                echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
                             else
-                                echo '<a href="logout.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>';
+                                echo '<a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Login</a>';
                             ?>
                         </li>
                     </ul>
