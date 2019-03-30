@@ -329,7 +329,6 @@
             if($_POST['year']!='#') {
                 $sql = "insert into exit_feedback (name,usn,year,p01,p02,p03,p04,p05,p06,p07,p08,p09,p10,p11,p12,comment )  values ( '".$_POST["name"]."','".$_POST["usn"]."','".$_POST["year"]."','".$_POST["po1"]."','".$_POST["po2"]."','".$_POST["po3"]."','".$_POST["po4"]."','".$_POST["po5"]."','".$_POST["po6"]."','".$_POST["po7"]."','".$_POST["po8"]."','".$_POST["po9"]."','".$_POST["po10"]."','".$_POST["po11"]."','".$_POST["po12"]."','".$_POST["comment"]."');";
                 mysqli_query($db,$sql);
-                header("location:exit.php");
                 }
             }
         ?>
