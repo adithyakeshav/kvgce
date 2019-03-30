@@ -51,7 +51,7 @@
         </style>
     </head>
     <body>
-        <div class="container-fluid  header-cover">
+        <div class="container-fluid  header-cover" style="background-color:#132853;color: whitesmoke">
             <div class="col-xs-2" align="center">
                 <img src="images/kvg_logo.jpg" height="180dp">
             </div>
