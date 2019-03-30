@@ -7,7 +7,6 @@
 <head>
      <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="IMAGES/KVG_LOGO.JPG" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
          <link rel='stylesheet' href="font/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
@@ -15,8 +14,9 @@
         <link rel='stylesheet' href="font/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+           <link rel="shortcut icon" href="images/kvg_logo.jpg"/>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;color : #132853; }
 form {border: 3px solid #f1f1f1;}
 
 img.avatar {
@@ -26,16 +26,16 @@ img.avatar {
 
 </style>
 </head>
-<body style="background-color:grey">
+<body style="background-color: lightseagreen">
     <div style="height:50px"></div>
     <div class="row">
-        <div class="col-xs-3"></div>
+        <div class="col-xs-4"></div>
         
-        <div class="col-xs-6"  style="background-color:white"> 
+        <div class="col-xs-4"  style="background-color:white"> 
         <h1>Login Form</h1>
         <form method="POST">
             <br><div align="center">
-              <img src="images/avatar.png" alt="Avatar" class="avatar">
+              <img src="images/avatar.png"  class="avatar">
           </div>
 
             <div style="padding:30px">
@@ -45,12 +45,14 @@ img.avatar {
               <br> <label class="lead"><b>Password</b></label><br>
               <input type="password" placeholder="Enter Password" name="passwd" required class="form-control"><br>
 
-              <button type="submit" class="btn btn-success" name="submit">Login</button>
-            <button type="reset" class="btn btn-danger">Clear</button>
+              <button type="submit" class="btn btn-success form-control" name="submit">Login</button>
+                <br><br><p align="center" class="lead">--- OR ---</p>
+            <a href="signup.php" class="btn btn-info form-control">Sign Up</a>
            </div>
-             </form>
+        </form>
+          <br>
         </div>
-        <div class="col-xs-3"></div>
+        <div class="col-xs-4"></div>
     </div>
     <?php
 	if(isset($_POST['submit'])) {
@@ -66,5 +68,5 @@ img.avatar {
         }
 ?>
 
-    </body>
+</body>
 </html>
