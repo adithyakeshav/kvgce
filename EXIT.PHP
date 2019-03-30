@@ -136,7 +136,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po1" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control"><input type="radio" name="po1" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control"><input type="radio" name="po1" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control"><input type="radio" name="po1" value="1"> Disagree</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -151,7 +151,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po2" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po2" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po2" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po2" value="1"> Disagree</label><br>
                     </div>
                 </div>
                 
@@ -166,8 +166,8 @@
                             and the cultural, societal, and environmental considerations.
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po3" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po3 value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po3" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po3" value="2"> Fairly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po3" value="1"> Disagree</label><br>
                     </div>
                 </div>
 
@@ -181,7 +181,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po4" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po4" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po4" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po4" value="1"> Disagree</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -196,7 +196,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po5" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po5" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po5" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po5" value="1"> Disagree</label><br>
                     </div>   
                 </div>
                 
@@ -210,7 +210,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po6" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po6" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po6" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po6" value="1"> Disagree</label><br>
                     </div>
                 </div>
 
@@ -225,7 +225,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po7" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po7" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po7" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po7" value="1"> Disagree</label><br>
                     </div>
                 </div>
 
@@ -238,7 +238,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po8" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po8" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po8" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po8" value="1"> Disagree</label><br>
                     </div>
                 </div>
 
@@ -251,7 +251,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po9" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po9" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po9" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po9" value="1"> Disagree</label><br>
                     </div>
                 </div>
 
@@ -266,7 +266,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po10" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po10" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po10" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po10" value="1"> Disagree</label><br>
                     </div> 
                 </div>
 
@@ -279,7 +279,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po11" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po11" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po11" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po11" value="1"> Disagree</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -292,7 +292,7 @@
                         </p>
                         <label class="text-primary form-control" >  <input type="radio" name="po12" value="3"> Strongly Agree</label><br>
                         <label class="text-primary form-control" ><input type="radio" name="po12" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po12" value="1"> Disgree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po12" value="1"> Disagree</label><br>
                     </div>  
                 </div>
                 <br>
