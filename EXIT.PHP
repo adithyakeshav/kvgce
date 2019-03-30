@@ -121,8 +121,8 @@
                             </font>
                         </p>
                     </div>
-                </div>          
-
+                </div>   
+                
             </div>
             <div class="container">
                 <div class="row">
@@ -297,6 +297,26 @@
                 </div>
                 <br>
                 <p class="lead">Suggestions(if any) :</p>
+                <button onclick="topFunction()" id="myBtn" class="btn btn-lg"><i class="fa fa-angle-double-up"></i></button>
+                <script>
+                    // When the user scrolls down 20px from the top of the document, show the button
+                    window.onscroll = function() {scrollFunction()};
+
+                    function scrollFunction() {
+                      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("myBtn").style.display = "block";
+                      } else {
+                        document.getElementById("myBtn").style.display = "none";
+                      }
+                    }
+
+                    // When the user clicks on the button, scroll to the top of the document
+                    function topFunction() {
+                      document.body.scrollTop = 0;
+                      document.documentElement.scrollTop = 0;
+                    }
+                </script>
+
                 <textarea name="comment" class="form-control" placeholder="Max 500 characters..."></textarea><br>
                 <button class="w3-button w3-green w3-round-large " type="submit">SUBMIT</button>
                 <button class="w3-button w3-red w3-round-large " type="reset">CLEAR</button>
