@@ -297,7 +297,11 @@
                 </div>
                 <br>
                 <p class="lead">Suggestions(if any) :</p>
-                <button onclick="topFunction()" id="myBtn" class="btn btn-lg"><i class="fa fa-angle-double-up"></i></button>
+                <textarea name="comment" class="form-control" placeholder="Max 500 characters..."></textarea><br>
+                <button class="w3-button w3-green w3-round-large " type="submit">SUBMIT</button>
+                <button class="w3-button w3-red w3-round-large " type="reset">CLEAR</button>
+            </div>
+            <button onclick="topFunction()" id="myBtn" class="btn btn-lg"><i class="fa fa-angle-double-up"></i></button>
                 <script>
                     // When the user scrolls down 20px from the top of the document, show the button
                     window.onscroll = function() {scrollFunction()};
@@ -316,11 +320,6 @@
                       document.documentElement.scrollTop = 0;
                     }
                 </script>
-
-                <textarea name="comment" class="form-control" placeholder="Max 500 characters..."></textarea><br>
-                <button class="w3-button w3-green w3-round-large " type="submit">SUBMIT</button>
-                <button class="w3-button w3-red w3-round-large " type="reset">CLEAR</button>
-            </div>
         </form> 
         <br>
         <br>
