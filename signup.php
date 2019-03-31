@@ -56,7 +56,7 @@ img.avatar {
                     </p>
               <button type="submit" class="btn btn-primary form-control" name="submit">Register</button><br>
                <br><p align="center" class="lead">--- OR ---</p>
-               <a href="login.php" class="btn btn-info form-control" >Already have an account? Sign In</a>
+                 <a href="login.php" class="btn btn-info form-control" >Already have an account? Sign In</a>
            </div>
         </form><br>
           </div>

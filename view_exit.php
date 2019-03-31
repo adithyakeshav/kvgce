@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <?php
-        session_start();
-     $db = mysqli_connect("localhost","root","", "kvgce");
+include 'header.php';
 ?>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">      
         <title></title>
         <style>
             table, th, tr, td, caption {
 			padding:10px;
-			border: 0.5px solid black;
+			border: 0.5px solid #132853;
+                                                                    color: #132853;
                       
                 }                              
 		caption {
 			font-size:30px;
 			color: white;
 			text-align:left;
-			background-color : grey;
+			background-color : #132853;
 		}
                 tr {
                     
@@ -26,17 +26,40 @@
 		
                 }
 		th {background-color : white;
-		
-			color : black;
+
 			font-size : 20px;
 		}
 
         </style>
     </head>
     <body>
-        <form method="post" >
-                <table align='center'>
-                <caption><b>Exit_Feedback </b></caption>
+         <div class="container">
+             
+            <form> <div class="row container-fluid" >
+                     <input type='number' class="col-xs-2 "maxlength="4" name='year' list="lst" autocomplete="off">
+                      <input class="col-xs-1" type='submit' class='btn btn-primary'>
+                     <datalist id="lst">
+                         <option>2012</option>
+                         <option>2013</option>
+                         <option>2014</option>
+                         <option>2015</option>
+                         <option>2016</option>
+                         <option>2018</option>
+                         <option>2019</option>
+                         <option>2020</option>
+                     </datalist>
+                    
+                  </div>    </form>
+             
+                    
+        <?php
+
+          if(isset($_GET['year'])) {
+      	$result=mysqli_query($db,"select * from exit_feedback where year='".$_GET['year']."';");
+        if(mysqli_num_rows($result) > 0) { 
+            ?>
+                <br><table align='center'>
+                <caption><b>Exit Feedback </b></caption>
                 <th>Name</th>
                 <th>USN</th>
                 <th>Graduation year</th>
@@ -53,12 +76,9 @@
                 <th>P011</th>
                 <th>P012</th>
                 </tr>
-                
-
-        <?php
-      	$result=mysqli_query($db,"select * from exit_feedback");
-	if(mysqli_num_rows($result) > 0) {
-	while($row=mysqli_fetch_assoc($result)) { ?>
+         <?php
+	while($row=mysqli_fetch_assoc($result)) { 
+            ?>
             <tr>
                <td><?php echo $row['name']; ?></td>
                <td><?php echo $row['usn']; ?></td>
@@ -81,9 +101,10 @@
             <?php        
                                                    }
                 }
-                   
+          }
         ?>
             </table> 
-        </form>
+                 
+        </div>
     </body>
 </html>
