@@ -129,8 +129,8 @@
         
         
 
-         <div class="container">       
-               <div class="container">
+         <div class="container-fluid">       
+               <div class="container-fluid">
             <form method="post">
             <div class="form form-inline">
                 <input type="number" name="year" minlength="4" maxlength="4"autocomplete="off" list="list1" placeholder="year">
@@ -154,7 +154,6 @@
         <caption><b>Exit_Feedback </b></caption>
         <th>Name</th>
         <th>USN</th>
-        <th>Graduation year</th>
         <th>PO1</th>
         <th>P02</th>
         <th>P03</th>
@@ -167,6 +166,9 @@
         <th>P010</th>
         <th>P011</th>
         <th>P012</th>
+        <th>PS1</th>
+        <th>PS2</th>
+        <th>PS3</th>
         </tr>
 
 
@@ -175,7 +177,6 @@
             <tr>
                <td align="center"><?php echo $row['name']; ?></td>
                <td align="center"><?php echo $row['usn']; ?></td>
-               <td align="center"><?php echo $row['year']; ?></td>
                <td align="center"><?php echo $row['p01']; ?></td>
                <td align="center"><?php echo $row['p02']; ?></td>
                <td align="center"><?php echo $row['p03']; ?></td>
@@ -188,6 +189,10 @@
                 <td align="center"><?php echo $row['p10']; ?></td>
                 <td align="center"><?php echo $row['p11']; ?></td>
                 <td align="center"><?php echo $row['p12']; ?></td>
+                
+                <td align="center"><?php echo $row['ps1']; ?></td>
+                <td align="center"><?php echo $row['ps2']; ?></td>
+                <td align="center"><?php echo $row['ps3']; ?></td>
 
             </tr>
 
