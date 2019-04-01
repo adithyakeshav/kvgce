@@ -232,6 +232,48 @@
                         <label class="text-primary form-control" ><input type="radio" name="po12" value="1"> Disagree</label><br>
                     </div>  
                 </div>
+                
+                
+                <div class="row">
+                    <div class="col-xs-1 lead">13</div>
+                    <div class="col-xs-11">
+                        <p class="lead text-justify">
+                            PROBLEM SOLVING SKILLS  :The ability to solve problems using mathematical analysis, data structures, 
+                            database management,algorithm, standard software engineering and professional practice to evolve optimal solutions.
+                </p>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps1" value="3"> Strongly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="2"> Fairly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="1"> Disagree</label><br>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-xs-1 lead">14</div>
+                    <div class="col-xs-11">
+                        <p class="lead text-justify">
+                            PROFESSIONAL SKILLS:  The ability to understand the functionality of hardware and software aspects of 
+                               computer systems and to comprehend, analyze, design, implement, test and conduct study in the domain of application development, computer network & security, software design and data mining.  
+                    </p>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps2" value="3"> Strongly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="2"> Fairly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="1"> Disagree</label><br>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-xs-1 lead">15</div>
+                    <div class="col-xs-11">
+                        <p class="lead text-justify">
+                             ETHICS AND CAREER DEVELOPMENT :
+                    Exhibit skills required for a successful career in the industry based on principles of 
+                    software project management, teamwork, ethical practices, develop the spirit of free enterprise and provide innovative ideas towards analysis.  
+     </p>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps3" value="3"> Strongly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="2"> Fairly Agree</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="1"> Disagree</label><br>
+                    </div>  
+                </div>
+                
+                
+                
                 <br>
                 <p class="lead">Suggestions(if any) :</p>
                 <textarea name="comment" class="form-control" placeholder="Max 500 characters..."></textarea><br>
@@ -264,7 +306,7 @@
         <?php 
         if(isset($_POST['submit']) ) {
             if($_POST['year']!='#') {
-                $sql = "insert into exit_feedback (name,usn,year,p01,p02,p03,p04,p05,p06,p07,p08,p09,p10,p11,p12,comment )  values ( '".$_POST["name"]."','".$_POST["usn"]."','".$_POST["year"]."','".$_POST["po1"]."','".$_POST["po2"]."','".$_POST["po3"]."','".$_POST["po4"]."','".$_POST["po5"]."','".$_POST["po6"]."','".$_POST["po7"]."','".$_POST["po8"]."','".$_POST["po9"]."','".$_POST["po10"]."','".$_POST["po11"]."','".$_POST["po12"]."','".$_POST["comment"]."');";
+                $sql = "insert into exit_feedback (name,usn,year,p01,p02,p03,p04,p05,p06,p07,p08,p09,p10,p11,p12,ps1,ps2,ps3,comment )  values ( '".$_POST["name"]."','".$_POST["usn"]."','".$_POST["year"]."','".$_POST["po1"]."','".$_POST["po2"]."','".$_POST["po3"]."','".$_POST["po4"]."','".$_POST["po5"]."','".$_POST["po6"]."','".$_POST["po7"]."','".$_POST["po8"]."','".$_POST["po9"]."','".$_POST["po10"]."','".$_POST["po11"]."','".$_POST["po12"]."','".$_POST["ps1"]."','".$_POST["ps2"]."','".$_POST["p3"]."','".$_POST["comment"]."');";
                 mysqli_query($db,$sql);
                 }
             }
