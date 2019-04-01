@@ -21,6 +21,7 @@
         <style>
                body {
                 color : #132853;
+                background-color: lightyellow;
             }
             .navbar  {
                 background-color : #132853;

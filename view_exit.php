@@ -49,6 +49,7 @@
           
                body {
                 color : #132853;
+                background-color: lightyellow;
             }
             .navbar  {
                 background-color : #132853;
@@ -74,7 +75,7 @@
     </head>
     <body>
         
-         <div class="container-fluid  header-cover">
+        <div class="container-fluid  header-cover" >
             <div class="col-xs-2" align="center">
                 <img src="images/kvg_logo.jpg" height="180dp">
             </div>
@@ -201,9 +202,9 @@
                 </caption>
                 <tr>
                     <th>Question</th>
-                    <th>Strongly Agree</th>
-                    <th>Fairly Agree</th>
-                    <th>Disagree</th>
+                    <th>Strongly Agree(3)</th>
+                    <th>Fairly Agree(2)</th>
+                    <th>Disagree(1)</th>
                     <th>Inference</th>
                 </tr>
                 <?php
