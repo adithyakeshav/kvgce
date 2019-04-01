@@ -41,9 +41,7 @@
                 font-size: 20px;
             }
             
-            .black {
-                color: black;
-            }
+            
 
         </style>
     </head>

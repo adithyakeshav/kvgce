@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-include 'header.php';
+    $db = mysqli_connect("localhost", "root", "", "kvgce");
+    session_start();
 ?>
 <html>
     <head>
-<<<<<<< HEAD
         <meta charset="UTF-8">      
-=======
         <meta charset="UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +17,6 @@ include 'header.php';
         <link rel='stylesheet' href="font/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
->>>>>>> 3d47f968b007768b372dd549d408f85c7f6d75bb
         <title></title>
         <style>
             table, th, tr, td, caption {
@@ -43,59 +41,85 @@ include 'header.php';
 
 			font-size : 20px;
 		}
+          
+               body {
+                color : #132853;
+            }
+            .navbar  {
+                background-color : #132853;
+                border-left: 0;
+                border-right: 0;
+            }
+   
+            .header-heading {
+                font-size: 50px;
+                font-family: 'Alfa Slab One', cursive;
+            }
+            .header-address {
+                font-size : 30px;
+                
+            }
+            
+            .fa-sign-in {
+                font-size: 20px;
+            }
+
 
         </style>
     </head>
     <body>
-<<<<<<< HEAD
-         <div class="container">
-             
-            <form> <div class="row container-fluid" >
-                     <input type='number' class="col-xs-2 "maxlength="4" name='year' list="lst" autocomplete="off">
-                      <input class="col-xs-1" type='submit' class='btn btn-primary'>
-                     <datalist id="lst">
-                         <option>2012</option>
-                         <option>2013</option>
-                         <option>2014</option>
-                         <option>2015</option>
-                         <option>2016</option>
-                         <option>2018</option>
-                         <option>2019</option>
-                         <option>2020</option>
-                     </datalist>
-                    
-                  </div>    </form>
-             
-                    
-        <?php
+        
+         <div class="container-fluid  header-cover">
+            <div class="col-xs-2" align="center">
+                <img src="images/kvg_logo.jpg" height="180dp">
+            </div>
+            <div class="col-xs-10">
+                <br>
+                <p class="lead header-heading" align="center">
+                    KVG College of Engineering
+                </p>
+                <p class="lead header-address" align="center">
+                    Kurunjibagh, Sullia, DK - 574327
+                </p>
+            </div>
+        </div>
+        
+        
+        <!---Navigation Bar with login and other redirection links--->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#Nav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"><marquee>Center of pure learning experience</marquee></a>
+                </div>
+                <div id="Nav" class="navbar-collapse collapse">
+                    <ul class="navbar-nav nav navbar-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Exit Programme Feedback</a></li>
+                        <li><a href="#">Course Feedback</a></li>
+                        <li>
+                            <?php
+                            if(isset($_SESSION['user']))
+                                echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
+                            else
+                                echo '<a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Login</a>';
+                            ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-          if(isset($_GET['year'])) {
-      	$result=mysqli_query($db,"select * from exit_feedback where year='".$_GET['year']."';");
-        if(mysqli_num_rows($result) > 0) { 
-            ?>
-                <br><table align='center'>
-                <caption><b>Exit Feedback </b></caption>
-                <th>Name</th>
-                <th>USN</th>
-                <th>Graduation year</th>
-                <th>PO1</th>
-                <th>P02</th>
-                <th>P03</th>
-                <th>P04</th>
-                <th>P05</th>
-                <th>P06</th>
-                <th>P07</th>
-                <th>P08</th>
-                <th>P09</th>
-                <th>P010</th>
-                <th>P011</th>
-                <th>P012</th>
-                </tr>
-         <?php
-	while($row=mysqli_fetch_assoc($result)) { 
-            ?>
-=======
-        <div class="container">
+        
+        
+        
+
+         <div class="container">       
+               <div class="container">
             <form method="post">
             <div class="form form-inline">
                 <input type="number" name="year" minlength="4" maxlength="4"autocomplete="off" list="list1" placeholder="year">
@@ -137,7 +161,6 @@ include 'header.php';
 
         <?php
         while($row=mysqli_fetch_assoc($result)) { ?>
->>>>>>> 3d47f968b007768b372dd549d408f85c7f6d75bb
             <tr>
                <td><?php echo $row['name']; ?></td>
                <td><?php echo $row['usn']; ?></td>
@@ -167,7 +190,8 @@ include 'header.php';
                 <caption style="font-size: 20px">
                     <?php
                         $num = mysqli_query($db, "select COUNT(*) from exit_feedback where year='".$year."';");
-                        echo "Total Submissions : ".mysqli_fetch_assoc($num)['COUNT(*)'];
+                        $total = mysqli_fetch_assoc($num)['COUNT(*)'];
+                        echo "Total Submissions : ".$total;
                     ?>
                 </caption>
                 <tr>
@@ -175,6 +199,7 @@ include 'header.php';
                     <th>Strongly Agree</th>
                     <th>Fairly Agree</th>
                     <th>Disagree</th>
+                    <th>Inference</th>
                 </tr>
                 <?php
                 for($i = 1; $i < 13; $i++) {
@@ -184,9 +209,9 @@ include 'header.php';
                         $question = "p0".$i;
                 ?>
                 <tr>
-                    <td>
-                        Question <?php echo $question; ?>
-                    </td>
+                    <td align="center"><b>
+                        <?php echo $question; ?>
+                        </b></td>
                     <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='3';";
@@ -211,23 +236,37 @@ include 'header.php';
                             echo $p1_disagree['count'];
                         ?>
                     </td>
+                    <td><b>
+                        <?php 
+                        $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
+                        if($res<1.5) {
+                            echo "Disagree";
+                        }
+                        elseif ($res<2.5) {
+                            echo "Fairly Agree";
+                        
+                    }
+                    else {
+                        echo "Strongly Agree";
+                    }
+                        
+                        ?>
+                        
+                        </b></td>
                 </tr>
                 <?php
                 }
-<<<<<<< HEAD
           }
         ?>
             </table> 
                  
         </div>
-=======
-                ?>
+            
             </table>
         </div>
         <?php
             }
-            }
+          
         ?>
->>>>>>> 3d47f968b007768b372dd549d408f85c7f6d75bb
     </body>
 </html>
