@@ -256,14 +256,14 @@
                         <?php 
                         $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
                         if($res<1.5) {
-                            echo "Disagree";
+                            echo "Disagree(".$res.")";
                         }
                         elseif ($res<2.5) {
-                            echo "Fairly Agree";
+                            echo "Fairly Agree(".$res.")";
                         
                     }
                     else {
-                        echo "Strongly Agree";
+                        echo "Strongly Agree(".$res.")";
                     }
                         
                         ?>
@@ -309,14 +309,14 @@
                         <?php 
                         $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
                         if($res<1.5) {
-                            echo "Disagree";
+                            echo "Disagree(".$res.")";
                         }
                         elseif ($res<2.5) {
-                            echo "Fairly Agree";
+                            echo "Fairly Agree(".$res.")";
                         
                     }
                     else {
-                        echo "Strongly Agree";
+                        echo "Strongly Agree(".$res.")";
                     }
                         
                         ?>
