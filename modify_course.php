@@ -8,7 +8,9 @@ and open the template in the editor.
 <?php
     include 'header.php';
     
-    if(!isset($_SESSION['uname']))
+    if(!isset($_SESSION['uname'])) {
+        header("location:");
+    }
 ?>
 
 <html>
