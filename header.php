@@ -20,13 +20,14 @@
         <title></title>
         <style>
                body {
-                color : #132853;
+                color : #191970;
                 background-color: lightyellow;
             }
             .navbar  {
-                background-color : #132853;
+                background-color : #191970;
                 border-left: 0;
                 border-right: 0;
+                                  
             }
    
             .header-heading {
@@ -76,9 +77,14 @@
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
                     <ul class="navbar-nav nav navbar-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="view_exit.php">Exit Programme Feedback</a></li>
-                        <li><a href="add_subject.php">Course Feedback</a></li>
+                        <li><a href="#">Home  |</a></li>
+                        <li><a href="view_exit.php">Exit Programme Feedback  |</a></li>
+                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback   |</a>
+                            <div id="collap" class=" collapse" style="color: wheat">
+                                <a href="add_subject.php">  Add Subject</a><br>
+                                <a href="view_exit.php">      Feedback Result</a>
+                            </div>
+                         </li>
                         <li>
                             <?php
                             if(isset($_SESSION['user']))
@@ -88,7 +94,8 @@
                             ?>
                         </li>
                     </ul>
-                </div>
+                  </div>
+               
             </div>
         </nav>
     </body>
