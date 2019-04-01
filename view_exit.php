@@ -104,7 +104,7 @@
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
                     <ul class="navbar-nav nav navbar-left">
-                       <li><a href="#">Home  |</a></li>
+                        <li><a href="EXIT.PHP">Home  |</a></li>
                         <li><a href="view_exit.php">Exit Programme Feedback  |</a></li>
                         <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback </a></li>
                         
