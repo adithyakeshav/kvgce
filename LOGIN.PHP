@@ -61,7 +61,7 @@ img.avatar {
 		$result = mysqli_query($db, $sql);
 		if ( mysqli_num_rows($result) > 0 )  {
 			$_SESSION["user"] = $_POST["uname"];
-			header("location:exit.php");
+			header("location:view_exit.php");
 		
 		}
 
