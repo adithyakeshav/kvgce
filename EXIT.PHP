@@ -38,8 +38,8 @@
                 <p  align="center"><font size="+3">Department of Computer Science and Engineering</font></p>
                 <p  align="center"> <font size="+2">  BE Students Exit Feedback</font> </p>
                 <div class="row">
-                    <div class="col-xs-4"> <br><p><font size="+1">Name :  <br><input type="text" name="name" class="form-control"></font></p></div>
-                    <div class="col-xs-4"> <br><p><font size="+1">USN :<br> <input type="text" name="usn" maxlength="10" class="form-control"></font></p></div>
+                    <div class="col-xs-4"> <br><p><font size="+1">Name :  <br><input type="text" name="name" class="form-control" required></font></p></div>
+                    <div class="col-xs-4"> <br><p><font size="+1">USN :<br> <input type="text" name="usn" maxlength="10" class="form-control" required></font></p></div>
                     <div class="col-xs-4"> <br>
                         <p>
                             <font size="+1">Year of Graduation : <br>
