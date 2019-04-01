@@ -77,8 +77,8 @@
                 <div id="Nav" class="navbar-collapse collapse">
                     <ul class="navbar-nav nav navbar-right">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Exit Programme Feedback</a></li>
-                        <li><a href="#">Course Feedback</a></li>
+                        <li><a href="view_exit.php">Exit Programme Feedback</a></li>
+                        <li><a href="add_subject.php">Course Feedback</a></li>
                         <li>
                             <?php
                             if(isset($_SESSION['user']))
