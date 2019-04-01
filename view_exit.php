@@ -267,6 +267,60 @@
                 </tr>
                 <?php
                 }
+                
+                for($i = 1; $i < 4; $i++) {
+                $question = "ps".$i;
+                ?>
+                
+                <tr>
+                    <td align="center"><b>
+                        <?php echo $question; ?>
+                        </b></td>
+                    <td align="center">
+                        <?php
+                            $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='3';";
+                            $p1 = mysqli_query($db, $query);
+                            $p1_strongly = mysqli_fetch_assoc($p1);
+                            echo $p1_strongly['count'];
+                        ?>
+                    </td>
+                    <td align="center">
+                        <?php
+                            $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='2';";
+                            $p1 = mysqli_query($db, $query);
+                            $p1_fairly = mysqli_fetch_assoc($p1);
+                            echo $p1_fairly['count'];
+                        ?>
+                    </td>
+                    <td align="center">
+                        <?php
+                            $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='1';";
+                            $p1 = mysqli_query($db, $query);
+                            $p1_disagree = mysqli_fetch_assoc($p1);
+                            echo $p1_disagree['count'];
+                        ?>
+                    </td>
+                    <td align="center"><b>
+                        <?php 
+                        $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
+                        if($res<1.5) {
+                            echo "Disagree";
+                        }
+                        elseif ($res<2.5) {
+                            echo "Fairly Agree";
+                        
+                    }
+                    else {
+                        echo "Strongly Agree";
+                    }
+                        
+                        ?>
+                        
+                        </b></td>
+                </tr>
+                
+                <?php
+                }
           }
         ?>
             </table> 
