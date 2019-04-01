@@ -2,6 +2,11 @@
 <?php
     $db = mysqli_connect("localhost", "root", "", "kvgce");
     session_start();
+        if(!isset($_SESSION['user'])) {
+            header('location:LOGIN.php');
+        }
+
+    
 ?>
 <html>
     <head>
@@ -125,7 +130,7 @@
                 <input type="number" name="year" minlength="4" maxlength="4"autocomplete="off" list="list1" placeholder="year">
                 <input type="submit" name="submit" class="btn btn-success"> 
             </div>
-        </form>
+            </form><br>
             <?php
             if(isset($_POST['submit'])) {
                 $year = $_POST['year'];
@@ -162,21 +167,21 @@
         <?php
         while($row=mysqli_fetch_assoc($result)) { ?>
             <tr>
-               <td><?php echo $row['name']; ?></td>
-               <td><?php echo $row['usn']; ?></td>
-               <td><?php echo $row['year']; ?></td>
-               <td><?php echo $row['p01']; ?></td>
-               <td><?php echo $row['p02']; ?></td>
-               <td><?php echo $row['p03']; ?></td>
-               <td><?php echo $row['p04']; ?></td>
-               <td><?php echo $row['p05']; ?></td>
-               <td><?php echo $row['p06']; ?></td>
-               <td><?php echo $row['p07']; ?></td>
-               <td><?php echo $row['p08']; ?></td>
-                <td><?php echo $row['p09']; ?></td>
-                <td><?php echo $row['p10']; ?></td>
-                <td><?php echo $row['p11']; ?></td>
-                <td><?php echo $row['p12']; ?></td>
+               <td align="center"><?php echo $row['name']; ?></td>
+               <td align="center"><?php echo $row['usn']; ?></td>
+               <td align="center"><?php echo $row['year']; ?></td>
+               <td align="center"><?php echo $row['p01']; ?></td>
+               <td align="center"><?php echo $row['p02']; ?></td>
+               <td align="center"><?php echo $row['p03']; ?></td>
+               <td align="center"><?php echo $row['p04']; ?></td>
+               <td align="center"><?php echo $row['p05']; ?></td>
+               <td align="center"><?php echo $row['p06']; ?></td>
+               <td align="center"><?php echo $row['p07']; ?></td>
+               <td align="center"><?php echo $row['p08']; ?></td>
+                <td align="center"><?php echo $row['p09']; ?></td>
+                <td align="center"><?php echo $row['p10']; ?></td>
+                <td align="center"><?php echo $row['p11']; ?></td>
+                <td align="center"><?php echo $row['p12']; ?></td>
 
             </tr>
 
@@ -212,7 +217,7 @@
                     <td align="center"><b>
                         <?php echo $question; ?>
                         </b></td>
-                    <td>
+                    <td align="center">
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='3';";
                             $p1 = mysqli_query($db, $query);
@@ -220,7 +225,7 @@
                             echo $p1_strongly['count'];
                         ?>
                     </td>
-                    <td>
+                    <td align="center">
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='2';";
                             $p1 = mysqli_query($db, $query);
@@ -228,7 +233,7 @@
                             echo $p1_fairly['count'];
                         ?>
                     </td>
-                    <td>
+                    <td align="center">
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='1';";
                             $p1 = mysqli_query($db, $query);
@@ -236,7 +241,7 @@
                             echo $p1_disagree['count'];
                         ?>
                     </td>
-                    <td><b>
+                    <td align="center"><b>
                         <?php 
                         $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
                         if($res<1.5) {
@@ -263,7 +268,7 @@
         </div>
             
             </table>
-        </div>
+    </div><br><br>
         <?php
             }
           
