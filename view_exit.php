@@ -100,14 +100,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand"><marquee>Center of pure learning experience</marquee></a>
+
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
-                    <ul class="navbar-nav nav navbar-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="view_exit.php">Exit Programme Feedback</a></li>
-                        <li><a href="add_subject.php">Course Feedback</a></li>
-                        <li>
+                    <ul class="navbar-nav nav navbar-left">
+                       <li><a href="#">Home  |</a></li>
+                        <li><a href="view_exit.php">Exit Programme Feedback  |</a></li>
+                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback </a></li>
+                        
+                         <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
+                                 <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a><a href="view_exit.php"  style="color:whitesmoke"> >Feedback Result</a>
+                             </div></li>
+                        
+                        <li style="padding-left: 200px">
                             <?php
                             if(isset($_SESSION['user']))
                                 echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
