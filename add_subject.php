@@ -69,10 +69,10 @@
             <br>
             
             <?php
-            if(isset($_POST['add']))
-                if(isset($_COOKIE['questions']))
-                    array_push ($_COOKIE['questions'],$_POST['question']);
-                else $_COOKIE['questions'] = array($_POST['question']);
+            if(isset($_POST['add'])|| isset($_POST['add'])) {
+                
+            }
+                
             ?>
             <div class="jumbotron">
                 <div class="row">
@@ -86,7 +86,8 @@
                 <form method="post">
                     
                     <div class="row">
-                        <textarea class="col-xs-9"
+                        <textarea required
+                                class="col-xs-9"
                                   style="height : 80px;"
                                   name ="question"
                             placeholder="Question"></textarea>
@@ -106,21 +107,13 @@
                 value="Add Question"
                 class="btn btn-info">
             </div> 
-            
-                <?php 
+             
                 
-                if(isset($_COOKIE['questions'])) {
-                
-                ?>
                 <input type="submit"
                 name ="submit"
                 value="Submit"
                 class="btn btn-success">
                 
-                <?php }
-                if(isset($_COOKIE['questions']))
-                    echo implode(" ",$_COOKIE['questions']);
-                ?>
             </div>
             
         </div>
