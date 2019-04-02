@@ -140,7 +140,7 @@
             <?php
             if(isset($_POST['submit'])) {
                 $year = $_POST['year'];
-                $result = mysqli_query($db, "select * from exit_feedback where year='".$year."';");
+                $result = mysqli_query($db, "select * from exit_feedback where year='".$year."' order by(usn);");
                 if(mysqli_num_rows($result) <= 0) {
                     ?>
             <p class="lead">No entry for given year <?php echo $year; ?></p>
@@ -151,9 +151,15 @@
                 
             ?>
         <table align='center'>
+<<<<<<< HEAD
         <caption><b>Exit_Feedback </b></caption>
         <th align="center">Name</th>
         <th align="center">USN</th>
+=======
+        <caption><b>Exit_Feedback - <?php echo $year; ?> </b></caption>
+        <th>Name</th>
+        <th>USN</th>
+>>>>>>> f427b363d2db1e508c9eb4615227259f5bd3c028
         <th>PO1</th>
         <th>P02</th>
         <th>P03</th>
