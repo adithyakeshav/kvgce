@@ -7,7 +7,7 @@
     }
     if(isset($_POST['submit'])) {
         
-        //if(isset)
+        
         
     }
     
@@ -32,10 +32,6 @@
                            maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
             </div>
             
-            
-            
-            
-            
             <br>
             <div class="form-inline row">
                     <div class="col-xs-6 row" >
@@ -43,6 +39,7 @@
                         <input
                             required
                             type="text" 
+                            autocomplete="off"
                             maxlength="40"
                             <?php
                             if(isset($_POST['add'])) {
@@ -54,20 +51,32 @@
                             placeholder="Code">
                     </div>
                     <div class="col-xs-6 row" align="center">
+                        
+                        <label class="lead col-xs-5">Scheme : </label>
                         <?php
                             if(!isset($_POST['add'])) {
-                           ?>
-                        <label class="lead col-xs-5">Scheme : </label>
-                        
-                                
+                           ?>       
                         <select required
                                 name="year"
                                 class="lead col-xs-7 form-control" >
-                            <option value="2010">2010</option>
-                            <option value="2015">2015</option>
-                            <option value="2017">2017</option>
+                            
+                            <?php  
+                            $scheme = mysqli_query($db, "select * from scheme;");
+                            if(mysqli_num_rows($scheme) > 0) {
+                                while($row = mysqli_fetch_assoc($scheme)) {
+                                    
+                                    echo "<option value='".$row['year']."'>".$row['year']."</option>\n";
+                            ?>
+                            <?php }}  ?>
                         </select>
-                            <?php } ?>
+                            <?php } else { ?>
+                        <input name="year"
+                                class="lead col-xs-7 form-control"
+                                readonly="true"
+                                <?php echo "value='".$_POST['year']."' " ; ?>
+                            >
+                        
+                            <?php  } ?>
                     </div>
             </div>
             <br>
