@@ -152,8 +152,8 @@
             ?>
         <table align='center'>
         <caption><b>Exit_Feedback </b></caption>
-        <th>Name</th>
-        <th>USN</th>
+        <th align="center">Name</th>
+        <th align="center">USN</th>
         <th>PO1</th>
         <th>P02</th>
         <th>P03</th>
@@ -211,11 +211,12 @@
                     ?>
                 </caption>
                 <tr>
-                    <th>Question</th>
-                    <th>Strongly Agree(3)</th>
-                    <th>Fairly Agree(2)</th>
-                    <th>Disagree(1)</th>
-                    <th>Inference</th>
+                    <th align="center">Question</th>
+                    <th align="center">Strongly Agree(3)</th>
+                    <th align="center">Fairly Agree(2)</th>
+                    <th align="center">Disagree(1)</th>
+                    <th align="center">Average</th>
+                    <th align="center">Inference</th>
                 </tr>
                 <?php
                 for($i = 1; $i < 13; $i++) {
@@ -252,18 +253,22 @@
                             echo $p1_disagree['count'];
                         ?>
                     </td>
+                    <td align="center">
+                             <?php      $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total; 
+                             echo round($res,2); ?>
+                    </td>
+                    
                     <td align="center"><b>
                         <?php 
-                        $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
                         if($res<1.5) {
-                            echo "Disagree(".$res.")";
+                            echo "Disagree";
                         }
                         elseif ($res<2.5) {
-                            echo "Fairly Agree(".$res.")";
+                            echo "Fairly Agree";
                         
                     }
                     else {
-                        echo "Strongly Agree(".$res.")";
+                        echo "Strongly Agree";
                     }
                         
                         ?>
@@ -305,18 +310,23 @@
                             echo $p1_disagree['count'];
                         ?>
                     </td>
+                    <td align="center">
+                        <?php 
+                                   $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
+                                   echo round($res,2);
+                        ?>
+                    </td>
                     <td align="center"><b>
                         <?php 
-                        $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
-                        if($res<1.5) {
-                            echo "Disagree(".$res.")";
+                               if($res<1.5) {
+                            echo "Disagree";
                         }
                         elseif ($res<2.5) {
-                            echo "Fairly Agree(".$res.")";
+                            echo "Fairly Agree";
                         
                     }
                     else {
-                        echo "Strongly Agree(".$res.")";
+                        echo "Strongly Agree";
                     }
                         
                         ?>
