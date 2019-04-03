@@ -9,19 +9,34 @@
 ?>
 <html>
     <head>
-        <meta charset="UTF-8">      
         <meta charset="UTF-8">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="IMAGES/KVG_LOGO.JPG" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-         <link rel='stylesheet' href="font/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
-         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel='stylesheet' href="font/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <title></title>
+        <style>
+            table, th, tr, td, caption {
+			padding:10px;
+			border: 0.5px solid #132853;
+                                                                    color: #132853;
+                      
+                }                              
+		caption {
+			font-size:30px;
+			color: white;
+			text-align:left;
+			background-color : #132853;
+		}
+                tr {
+                    
+                     background-color : white;
+                  
+		
+                }
+		th {background-color : white;
+
+			font-size : 20px;
+		}
+
+
+        </style>
     </head>
     <body>
 
