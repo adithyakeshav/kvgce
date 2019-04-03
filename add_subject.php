@@ -5,11 +5,7 @@
     if(!isset($_SESSION['user'])) {
         header("location:login.php");
     }
-    if(isset($_POST['submit'])) {
-        
-        
-        
-    }
+    
     
 ?>
 
@@ -21,6 +17,38 @@
     <body>
         <form method="post">
         <div class="container">
+            <?php 
+            if(isset($_POST['submit'])) {
+                $scheme = $_POST['year'];
+                $sub_name = $_POST['sub_name'];
+                $sub_code = $_POST['sub_code'];
+                $query = "INSERT INTO subject VALUES('".$sub_code."','".$sub_name."','".$scheme."');";
+
+                $insert_sub = mysqli_query($db, $query);
+            ?>
+            <div class="form-inline">
+                <p class="lead txt txt-danger">
+                    <?php 
+                    if($insert_sub) 
+                        echo "Subject $sub_code was addded Successfully<br>";
+                    else
+                        echo "Subject $sub_code could not be addded to the Database<br>";
+                    for($i=1; $i<13; $i++) {
+                        if(isset($_POST["question".$i])) {
+                            $insert_qn = mysqli_query($db, 
+                                    "INSERT INTO question VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');");
+                            
+                            if(!$insert_qn) {
+                                echo "Question $i was not added<br>";
+                            }
+                        } 
+                    }
+                    ?>
+                </p>
+            </div>
+            <?php 
+            }   
+            ?>
             <div class="form-inline ">
                     <label class="lead">Subject Name : </label>
                     <input required type="text" autocomplete="off"
@@ -82,7 +110,7 @@
             <br>
             
             <?php
-            if(!isset($_POST['year'])) {
+            if(!isset($_POST['add'])) {
             ?>
             
             <div>
@@ -121,8 +149,10 @@
                         </div>
                         <div class="col-xs-3">
                             <div>
-                                <select required name="criteria" class="form-control">
-                                    <?php for($j=1; $j<=$num; $j++) { ?>
+                                <select required class="form-control" 
+                                    <?php 
+                                    echo "name='criteria".$i."' >\n";
+                                    for($j=1; $j<=$num; $j++) { ?>
                                     <option><?php echo "po".$j  ?></option>
                                     <?php   }   ?>
                                 </select>
