@@ -151,15 +151,10 @@
                 
             ?>
         <table align='center'>
-<<<<<<< HEAD
-        <caption><b>Exit_Feedback </b></caption>
-        <th align="center">Name</th>
-        <th align="center">USN</th>
-=======
-        <caption><b>Exit_Feedback - <?php echo $year; ?> </b></caption>
+
+        <caption><b>Exit Feedback - <?php echo $year; ?> </b></caption>
         <th>Name</th>
         <th>USN</th>
->>>>>>> f427b363d2db1e508c9eb4615227259f5bd3c028
         <th>PO1</th>
         <th>P02</th>
         <th>P03</th>
@@ -222,7 +217,7 @@
                     <th align="center">Fairly Agree(2)</th>
                     <th align="center">Disagree(1)</th>
                     <th align="center">Average</th>
-                    <th align="center">Inference</th>
+                    
                 </tr>
                 <?php
                 for($i = 1; $i < 13; $i++) {
@@ -264,23 +259,7 @@
                              echo round($res,2); ?>
                     </td>
                     
-                    <td align="center"><b>
-                        <?php 
-                        if($res<1.5) {
-                            echo "Disagree";
-                        }
-                        elseif ($res<2.5) {
-                            echo "Fairly Agree";
-                        
-                    }
-                    else {
-                        echo "Strongly Agree";
-                    }
-                        
-                        ?>
-                        
-                        </b></td>
-                </tr>
+                                   </tr>
                 <?php
                 }
                 
@@ -322,23 +301,7 @@
                                    echo round($res,2);
                         ?>
                     </td>
-                    <td align="center"><b>
-                        <?php 
-                               if($res<1.5) {
-                            echo "Disagree";
-                        }
-                        elseif ($res<2.5) {
-                            echo "Fairly Agree";
-                        
-                    }
-                    else {
-                        echo "Strongly Agree";
-                    }
-                        
-                        ?>
-                        
-                        </b></td>
-                </tr>
+                            </tr>
                 
                 <?php
                 }
