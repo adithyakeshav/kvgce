@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
-    $db = mysqli_connect("localhost", "root", "", "kvgce");
-    session_start();
+        include 'header.php';
         if(!isset($_SESSION['user'])) {
             header('location:LOGIN.php');
         }
@@ -23,111 +22,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <title></title>
-        <style>
-            table, th, tr, td, caption {
-			padding:10px;
-			border: 0.5px solid #132853;
-                                                                    color: #132853;
-                      
-                }                              
-		caption {
-			font-size:30px;
-			color: white;
-			text-align:left;
-			background-color : #132853;
-		}
-                tr {
-                    
-                     background-color : white;
-                  
-		
-                }
-		th {background-color : white;
-
-			font-size : 20px;
-		}
-          
-               body {
-                color : #132853;
-                background-color: lightyellow;
-            }
-            .navbar  {
-                background-color : #132853;
-                border-left: 0;
-                border-right: 0;
-            }
-   
-            .header-heading {
-                font-size: 50px;
-                font-family: 'Alfa Slab One', cursive;
-            }
-            .header-address {
-                font-size : 30px;
-                
-            }
-            
-            .fa-sign-in {
-                font-size: 20px;
-            }
-
-
-        </style>
     </head>
     <body>
-        
-        <div class="container-fluid  header-cover" >
-            <div class="col-xs-2" align="center">
-                <img src="images/kvg_logo.jpg" height="180dp">
-            </div>
-            <div class="col-xs-10">
-                <br>
-                <p class="lead header-heading" align="center">
-                    KVG College of Engineering
-                </p>
-                <p class="lead header-address" align="center">
-                    Kurunjibagh, Sullia, DK - 574327
-                </p>
-            </div>
-        </div>
-        
-        
-        <!---Navigation Bar with login and other redirection links--->
-        <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#Nav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-                <div id="Nav" class="navbar-collapse collapse">
-                    <ul class="navbar-nav nav navbar-left">
-                        <li><a href="EXIT.PHP">Home  |</a></li>
-                        <li><a href="view_exit.php">Exit Programme Feedback  |</a></li>
-                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback </a></li>
-                        
-                         <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
-                                 <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a><a href="view_exit.php"  style="color:whitesmoke"> >Feedback Result</a>
-                             </div></li>
-                        
-                        <li style="padding-left: 200px">
-                            <?php
-                            if(isset($_SESSION['user']))
-                                echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
-                            else
-                                echo '<a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Login</a>';
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        
-        
-        
 
          <div class="container-fluid">       
                <div class="container-fluid">
