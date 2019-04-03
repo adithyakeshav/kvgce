@@ -76,7 +76,7 @@
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
                     <ul class="navbar-nav nav navbar-left">
-                        <li><a href="menu.php">Home |</a></li>
+                        <li><a href="menu.php">Home</a></li>
                         <li><a data-target="#collap1" data-toggle='collapse'>Exit Programme Feedback</a></li>
                         <li> <div id="collap1" class="collapse" style="padding-top: 15px" >
                                  <a href="exit.php" style="color:whitesmoke">> Fill form  </a>
