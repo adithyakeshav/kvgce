@@ -20,8 +20,8 @@
             <?php 
             if(isset($_POST['submit'])) {
                 $scheme = $_POST['year'];
-                $sub_name = $_POST['sub_name'];
-                $sub_code = $_POST['sub_code'];
+                $sub_name = strtoupper($_POST['sub_name']);
+                $sub_code = strtoupper($_POST['sub_code']);
                 $query = "INSERT INTO subject VALUES('".$sub_code."','".$sub_name."','".$scheme."');";
 
                 $insert_sub = mysqli_query($db, $query);
@@ -152,7 +152,7 @@
                                 <select required class="form-control" 
                                     <?php 
                                     echo "name='criteria".$i."' >\n";
-                                    for($j=1; $j<=$num; $j++) { ?>
+                                    for($j=1; $j<=12; $j++) { ?>
                                     <option><?php echo "po".$j  ?></option>
                                     <?php   }   ?>
                                 </select>
