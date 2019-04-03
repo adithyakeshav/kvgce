@@ -10,16 +10,7 @@ include 'header.php';
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .mySlides {display:none;}
-.foot {
-    background-color:  #191970;
-    color: whitesmoke;
-    text-align: center;
-    font-size: 15px;
-    height: 50px;
-    font-style: italic;
-   padding-top: 20px;
-   border-radius: 2%;
-}
+
 </style>
 </head>
 
@@ -48,7 +39,7 @@ function carousel() {
 }
 </script>
 <footer>
-    <div  class="foot">copyright <i class="fa fa-copyright"></i> KAR developers</div>
+    <div  style="background-color: #191970;height: 50px"></div>
 </footer>
 </body>
 </html>
