@@ -76,9 +76,19 @@
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
                     <ul class="navbar-nav nav navbar-left">
-                        <li><a href="#">Home  |</a></li>
-                        <li><a href="view_exit.php">Exit Programme Feedback  |</a></li>
-                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback </a></li>
+                        <li><a href="menu.php">Home |</a></li>
+                        <li><a data-target="#collap1" data-toggle='collapse'>Exit Programme Feedback</a></li>
+                        <li> <div id="collap1" class="collapse" style="padding-top: 15px" >
+                                 <a href="exit.php" style="color:whitesmoke">> Fill form  </a>
+                                <?php
+                                if(isset($_SESSION['user'])) {
+                                ?>
+                                 <a href="view_exit.php"  style="color:whitesmoke"> >View Result</a>
+                                <?php } ?>
+                             </div>
+                         </li>
+                        
+                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback</a></li>
                         
                          <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
                                  <a href="cb_feedback.php" style="color:whitesmoke">> Fill form  </a>
@@ -86,7 +96,7 @@
                                 if(isset($_SESSION['user'])) {
                                 ?>
                                  <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a>
-                                 <a href="view_exit.php"  style="color:whitesmoke"> >Feedback Result</a>
+                                 <a href="view_exit.php"  style="color:whitesmoke"> >View Result</a>
                                 <?php } ?>
                              </div>
                          </li>
