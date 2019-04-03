@@ -48,10 +48,10 @@
     </head>
     <body>
         <div class="container-fluid  header-cover">
-            <div class="col-xs-2" align="center">
+            <div class="col-md-2" align="center">
                 <img src="images/kvg_logo.jpg" height="180dp">
             </div>
-            <div class="col-xs-10">
+            <div class="col-md-10">
                 <br>
                 <p class="lead header-heading" align="center">
                     KVG College of Engineering
@@ -81,10 +81,18 @@
                         <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback </a></li>
                         
                          <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
-                                 <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a><a href="view_exit.php"  style="color:whitesmoke"> >Feedback Result</a>
-                             </div></li>
-                        
-                        <li style="padding-left: 200px">
+                                 <a href="cb_feedback.php" style="color:whitesmoke">> Fill form  </a>
+                                <?php
+                                if(isset($_SESSION['user'])) {
+                                ?>
+                                 <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a>
+                                 <a href="view_exit.php"  style="color:whitesmoke"> >Feedback Result</a>
+                                <?php } ?>
+                             </div>
+                         </li>
+                    </ul>
+                    <ul class="navbar-nav nav navbar-right">
+                        <li>
                             <?php
                             if(isset($_SESSION['user']))
                                 echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
