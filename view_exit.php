@@ -13,6 +13,7 @@
         <title></title>
         <style>
             table, th, tr, td, caption {
+                                                                    text-align: center;
 			padding:10px;
 			border: 0.5px solid #132853;
                                                                     color: #132853;
@@ -87,24 +88,24 @@
         <?php
         while($row=mysqli_fetch_assoc($result)) { ?>
             <tr>
-               <td align="center"><?php echo $row['name']; ?></td>
-               <td align="center"><?php echo $row['usn']; ?></td>
-               <td align="center"><?php echo $row['p01']; ?></td>
-               <td align="center"><?php echo $row['p02']; ?></td>
-               <td align="center"><?php echo $row['p03']; ?></td>
-               <td align="center"><?php echo $row['p04']; ?></td>
-               <td align="center"><?php echo $row['p05']; ?></td>
-               <td align="center"><?php echo $row['p06']; ?></td>
-               <td align="center"><?php echo $row['p07']; ?></td>
-               <td align="center"><?php echo $row['p08']; ?></td>
-                <td align="center"><?php echo $row['p09']; ?></td>
-                <td align="center"><?php echo $row['p10']; ?></td>
-                <td align="center"><?php echo $row['p11']; ?></td>
-                <td align="center"><?php echo $row['p12']; ?></td>
+               <td><?php echo $row['name']; ?></td>
+               <td><?php echo $row['usn']; ?></td>
+               <td><?php echo $row['p01']; ?></td>
+               <td><?php echo $row['p02']; ?></td>
+               <td><?php echo $row['p03']; ?></td>
+               <td><?php echo $row['p04']; ?></td>
+               <td><?php echo $row['p05']; ?></td>
+               <td><?php echo $row['p06']; ?></td>
+               <td><?php echo $row['p07']; ?></td>
+               <td><?php echo $row['p08']; ?></td>
+                <td><?php echo $row['p09']; ?></td>
+                <td><?php echo $row['p10']; ?></td>
+                <td><?php echo $row['p11']; ?></td>
+                <td><?php echo $row['p12']; ?></td>
                 
-                <td align="center"><?php echo $row['ps1']; ?></td>
-                <td align="center"><?php echo $row['ps2']; ?></td>
-                <td align="center"><?php echo $row['ps3']; ?></td>
+                <td><?php echo $row['ps1']; ?></td>
+                <td><?php echo $row['ps2']; ?></td>
+                <td><?php echo $row['ps3']; ?></td>
 
             </tr>
 
@@ -138,10 +139,10 @@
                         $question = "p0".$i;
                 ?>
                 <tr>
-                    <td align="center"><b>
+                    <td><b>
                         <?php echo $question; ?>
                         </b></td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='3';";
                             $p1 = mysqli_query($db, $query);
@@ -149,7 +150,7 @@
                             echo $p1_strongly['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='2';";
                             $p1 = mysqli_query($db, $query);
@@ -157,7 +158,7 @@
                             echo $p1_fairly['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='1';";
                             $p1 = mysqli_query($db, $query);
@@ -165,7 +166,7 @@
                             echo $p1_disagree['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                              <?php      $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total; 
                              echo round($res,2); ?>
                     </td>
@@ -179,10 +180,10 @@
                 ?>
                 
                 <tr>
-                    <td align="center"><b>
+                    <td><b>
                         <?php echo $question; ?>
                         </b></td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='3';";
                             $p1 = mysqli_query($db, $query);
@@ -190,7 +191,7 @@
                             echo $p1_strongly['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='2';";
                             $p1 = mysqli_query($db, $query);
@@ -198,7 +199,7 @@
                             echo $p1_fairly['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php
                             $query = "SELECT COUNT(*) as count FROM exit_feedback WHERE year='".$year."' AND ".$question."='1';";
                             $p1 = mysqli_query($db, $query);
@@ -206,7 +207,7 @@
                             echo $p1_disagree['count'];
                         ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php 
                                    $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
                                    echo round($res,2);
