@@ -225,7 +225,7 @@
             
             </table>
     </div><br><br>
-        <?php
+        <?php 
             }
           
         ?>
