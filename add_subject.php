@@ -32,7 +32,7 @@
                     if($insert_sub) 
                         echo "Subject $sub_code was addded Successfully<br>";
                     else
-                        echo "Subject $sub_code could not be addded to the Database<br>";
+                        echo "Given Questions were added to the existing Subject $sub_code<br>";
                     for($i=1; $i<13; $i++) {
                         if(isset($_POST["question".$i])) {
                             $insert_qn = mysqli_query($db, 
