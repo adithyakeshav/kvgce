@@ -2,11 +2,24 @@
 <?php 
 include 'header.php';
 
+function startsWith($string, $startString) 
+{ 
+    $len = strlen($startString); 
+    return (substr($string, 0, $len) === $startString); 
+} 
+?>
+<?php
 if(isset($_POST['submit'])) {
     $usn = $_POST['usn'];
     $variables = array_keys($_POST);
     foreach($variables as $key) {
         if(startsWith( $key, "qn" )) {
+            $query = "INSERT INTO cb_feedback VALUES('".$usn."','". substr($key, 2)."','".$_POST[$key]."')";
+            if(!mysqli_query($db, $query)) {
+                echo "<script>"
+                . "alert('Given student has already given the Feedback for given subject once');"
+                . "</script>";
+            }
             
         }
     }
