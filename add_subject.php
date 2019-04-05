@@ -180,10 +180,6 @@
                 echo "<script>"
                 . "alert('Subject $sub_code was addded Successfully');"
                 . "</script>";
-            else
-                echo "<script>"
-                . "alert('Given Questions were added to the existing Subject $sub_code');"
-                . "</script>";
         }
         ?>
     </body>
