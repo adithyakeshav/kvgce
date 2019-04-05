@@ -92,17 +92,21 @@ if(isset($_POST['submit'])) {
                                             <div class="col-xs-1 lead"><?php echo $i; ?></div>
                                             <div class="col-xs-9">
                                                 <p class="lead text-justify"><?php echo  $row1['statement']; ?> </p>
-                                                <?php //variables nmaes not changed change it!! ?>
+                                                
                                                 <label class="text-primary form-control" >  
                                                     <input type="radio"
                                                            <?php echo "name='qn".$row1['qn_id']."' \n" ?>
                                                            required value="3">
                                                     Strongly Agree
                                                 </label><br>
-                                                <label class="text-primary form-control" ><input type="radio" name="ps1" value="2"> Fairly Agree</label><br>
-                                                <label class="text-primary form-control" ><input type="radio" name="ps1" value="1"> Disagree</label><br>
+                                                <label class="text-primary form-control" ><input type="radio" 
+                                                                                         <?php echo "name='qn".$row1['qn_id']."' \n" ?>        
+                                                                                                 value="2"> Fairly Agree</label><br>
+                                                <label class="text-primary form-control" ><input type="radio" 
+                                                                                                 <?php echo "name='qn".$row1['qn_id']."' \n" ?>
+                                                                                                 value="1"> Disagree</label><br>
                                             </div>  
-                                            <div class="col-xs-2"><p><?php  echo $row1['criteria']; ?></p></div>
+                                            <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
                                         </div>
 <?php        
                                     $i=$i+1;    }
