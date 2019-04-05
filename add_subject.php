@@ -29,10 +29,7 @@
             <div class="form-inline">
                 <p class="lead txt txt-danger">
                     <?php 
-                    if($insert_sub) 
-                        echo "Subject $sub_code was addded Successfully<br>";
-                    else
-                        echo "Given Questions were added to the existing Subject $sub_code<br>";
+                    
                     for($i=1; $i<13; $i++) {
                         if(isset($_POST["question".$i])) {
                             $insert_qn = mysqli_query($db, 
@@ -175,5 +172,15 @@
         </div>
         <div style="height:50px;"></div>
     </form>
+        <?php   
+        if($insert_sub) 
+                        echo "<script>"
+                        . "alert('Subject $sub_code was addded Successfully');"
+                        . "</script>";
+                    else
+                        echo "<script>"
+                        . "alert('Given Questions were added to the existing Subject $sub_code');"
+                        . "</script>";
+        ?>
     </body>
 </html>

@@ -3,6 +3,7 @@
 include 'header.php';
 
 if(isset($_POST['submit'])) {
+    $usn = $_POST['usn'];
     $variables = array_keys($_POST);
     foreach($variables as $key) {
         if(startsWith( $key, "qn" )) {
