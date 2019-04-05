@@ -86,8 +86,8 @@ if(isset($_POST['submit'])) {
        <?php 
        if(isset($_POST['show'])){
            $query = mysqli_query($db,"SELECT * FROM question WHERE sub_code='".$_POST['code']."' ORDER BY criteria ;  ");
-          $i=1; ?>
-            <?php if (mysqli_num_rows($query) > 0) {
+          $i=1; 
+          if (mysqli_num_rows($query) > 0) {
                                         while ($row1 = mysqli_fetch_assoc($query)) {   ?>
                                                <div class="row">
                                             <div class="col-xs-1 lead"><?php echo $i; ?></div>
