@@ -36,7 +36,9 @@
                                     "INSERT INTO question VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');");
                             
                             if(!$insert_qn) {
-                                echo "Question $i was not added<br>";
+                                echo "<script>"
+                                . "alert('Question $i already exists');"
+                                . "</script>";
                             }
                         } 
                     }
@@ -172,15 +174,17 @@
         </div>
         <div style="height:50px;"></div>
     </form>
-        <?php   
-        if($insert_sub) 
-                        echo "<script>"
-                        . "alert('Subject $sub_code was addded Successfully');"
-                        . "</script>";
-                    else
-                        echo "<script>"
-                        . "alert('Given Questions were added to the existing Subject $sub_code');"
-                        . "</script>";
+        <?php  
+        if(isset($insert_sub)) {
+            if($insert_sub && isset($_POST['submit'])) 
+                echo "<script>"
+                . "alert('Subject $sub_code was addded Successfully');"
+                . "</script>";
+            else
+                echo "<script>"
+                . "alert('Given Questions were added to the existing Subject $sub_code');"
+                . "</script>";
+        }
         ?>
     </body>
 </html>
