@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <title>Report of content beyond feedback</title>
         <style>
-            table, th, tr, td, caption {
+            table, th, tr, td,caption {
                                                                     text-align: center;
 			padding:10px;
 			border: 0.5px solid #132853;
@@ -74,7 +74,7 @@
                 echo "</div>";
                 $num = $i - 1;
             ?>
-            <table width="100%" class="row">
+            <table width="100%">
                 <caption>
                     Content Beyond Feedback - <?php echo $_POST['sub_code']; ?>
                 </caption>
@@ -116,9 +116,8 @@
             <?php
             }
             ?>
-            
             <br><table width="100%" > 
-                <caption class="lead">Statistics</caption>
+                <caption >Statistics</caption>
                 <tr><th>Question</th>
                     <th>Strongly Agree(3)</th>
                     <th>Fairly Agree(2)</th>
