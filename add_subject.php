@@ -12,14 +12,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Add Subject to Content beyond feedback</title>
     </head>
     <body>
         <form method="post">
         <div class="container">
             <?php 
             if(isset($_POST['submit'])) {
-              $sub_name = strtoupper($_POST['sub_name']);
+                $sub_name = strtoupper($_POST['sub_name']);
                 $sub_code = strtoupper($_POST['sub_code']);
                 $query = "INSERT INTO subject VALUES('".$sub_name."','".$sub_code."');";
 
@@ -33,7 +33,7 @@
                         if(isset($_POST["question".$i])) {
                             $insert_qn = mysqli_query($db, 
                                     "INSERT INTO question VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');");
-                            echo "INSERT INTO question VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');";
+                            
                             if(!$insert_qn) {
                                 echo "<script>"
                                 . "alert('Question $i already exists');"

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
     $db = mysqli_connect("localhost", "root", "", "kvgce");
     session_start();
@@ -17,7 +16,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <title></title>
         <style>
                body {
                 color : #191970;
@@ -96,7 +94,7 @@
                                 if(isset($_SESSION['user'])) {
                                 ?>
                                  <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a>
-                                 <a href="view_exit.php"  style="color:whitesmoke"> >View Result</a>
+                                 <a href="cb_report.php"  style="color:whitesmoke"> >View Result</a>
                                 <?php } ?>
                              </div>
                          </li>
