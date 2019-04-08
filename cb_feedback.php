@@ -10,11 +10,11 @@ function startsWith($string, $startString)
 ?>
 <?php
 if(isset($_POST['submit'])) {
-    $usn = $_POST['usn'];
+    $usn = strtoupper($_POST['usn']);
     $variables = array_keys($_POST);
     foreach($variables as $key) {
         if(startsWith( $key, "qn" )) {
-            $query = "INSERT INTO cb_feedback VALUES('".$usn."','". substr($key, 2)."','".$_POST[$key]."')";
+            $query = "INSERT INTO cb_feedback VALUES('".$usn."','". substr($key, 2)."','".$_POST[$key]."','".$_POST['name']."')";
             if(!mysqli_query($db, $query)) {
                 echo "<script>"
                 . "alert('Given student has already given the Feedback for given subject once');"
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) {
                     <p  align="center"> <font size="+2">  BE Students Exit Feedback</font> </p>
                     <div class="row">
                         <div class="col-md-4"> <br><p><font size="+1">Name :  <br>
-                                <input type="text" pattern="[a-zA-Z]{4,}" name="name"
+                                <input type="text"  name="name"
                                        <?php  
                                        if(isset($_POST['show'])) {
                                                echo "readonly='true'\n value='".$_POST['name']."' \n";
