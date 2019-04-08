@@ -91,7 +91,7 @@
                     $query = "SELECT DISTINCT usn,name "
                             ."FROM cb_feedback c,question q "
                             ."WHERE q.qn_id=c.qn_id "
-                            ."AND sub_code='15CS54' "
+                            ."AND sub_code='".$_POST['sub_code']."' "
                             ."ORDER BY usn;";
                     $result = mysqli_query($db, $query);
                     if(mysqli_num_rows($result)>0) {
@@ -117,10 +117,9 @@
             }
             ?>
             
-            <table width="100%">
+            <br><table width="100%" > 
                 <caption class="lead">Statistics</caption>
-                <tr>
-                    <th>Question</th>
+                <tr><th>Question</th>
                     <th>Strongly Agree(3)</th>
                     <th>Fairly Agree(2)</th>
                     <th>Disagree(1)</th>
