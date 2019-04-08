@@ -19,10 +19,9 @@
         <div class="container">
             <?php 
             if(isset($_POST['submit'])) {
-                $scheme = $_POST['year'];
                 $sub_name = strtoupper($_POST['sub_name']);
                 $sub_code = strtoupper($_POST['sub_code']);
-                $query = "INSERT INTO subject VALUES('".$sub_code."','".$sub_name."');";
+                $query = "INSERT INTO subject VALUES('".$sub_name."','".$sub_code."');";
 
                 $insert_sub = mysqli_query($db, $query);
             ?>
