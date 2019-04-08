@@ -128,7 +128,8 @@
                     <th align="center">Strongly Agree(3)</th>
                     <th align="center">Fairly Agree(2)</th>
                     <th align="center">Disagree(1)</th>
-                    <th align="center">Average</th>
+                    <th align="center">Percentage</th>
+                    <th align="center">Level</th>
                     
                 </tr>
                 <?php
@@ -167,11 +168,24 @@
                         ?>
                     </td>
                     <td>
-                             <?php      $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total; 
+                             <?php      $res = 100*($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/(3*$total); 
                              echo round($res,2); ?>
                     </td>
                     
-                                   </tr>
+                    <td>
+                        <?php
+                            if($res >= 90) {
+                                echo "3";
+                            } elseif ($res >= 80) {
+                            echo "2";
+                        } elseif($res >= 70 )
+                            echo "1";
+                        else echo "0";
+                            
+                        ?>
+                    </td>
+                
+                </tr>
                 <?php
                 }
                 
@@ -209,8 +223,20 @@
                     </td>
                     <td>
                         <?php 
-                                   $res = ($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/$total;
+                                   $res = 100*($p1_disagree['count']+($p1_fairly['count']*2)+($p1_strongly['count']*3))/(3*$total);
                                    echo round($res,2);
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            if($res >= 90) {
+                                echo "3";
+                            } elseif ($res >= 80) {
+                            echo "2";
+                        } elseif($res >= 70 )
+                            echo "1";
+                        else echo "0";
+                            
                         ?>
                     </td>
                             </tr>
