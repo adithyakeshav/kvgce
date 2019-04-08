@@ -118,6 +118,17 @@
             ?>
             <br><table width="100%" > 
                 <caption >Statistics</caption>
+                <caption>
+                    <?php
+                    $query = "SELECT COUNT(DISTINCT usn) as count "
+                        ."FROM cb_feedback c, question q "
+                        ."WHERE q.qn_id = c.qn_id "
+                        ."AND sub_code='".$_POST['sub_code']."'";
+                    $result = mysqli_query($db, $query);
+                    $total = mysqli_fetch_assoc($result)['count'];
+                    echo "Total Submissions : ".$total;
+                ?>
+                </caption>
                 <tr><th>Question</th>
                     <th>Strongly Agree(3)</th>
                     <th>Fairly Agree(2)</th>
@@ -127,12 +138,7 @@
                 </tr>
                 <?php
                 $i = 1;
-                $query = "SELECT COUNT(DISTINCT usn) as count "
-                        ."FROM cb_feedback c, question q "
-                        ."WHERE q.qn_id = c.qn_id "
-                        ."AND sub_code='".$_POST['sub_code']."'";
-                $result = mysqli_query($db, $query);
-                $total = mysqli_fetch_assoc($result)['count'];
+                
                             foreach ($questions as $qn) {
                                 echo "<tr>\n";
                                 echo "<td>".$i++."</td>";
