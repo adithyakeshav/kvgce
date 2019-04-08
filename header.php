@@ -86,7 +86,7 @@
                              </div>
                          </li>
                         
-                        <li><a data-target="#collap" data-toggle='collapse'>Beyond Course Feedback</a></li>
+                        <li><a data-target="#collap" data-toggle='collapse'>Content Beyond Feedback</a></li>
                         
                          <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
                                  <a href="cb_feedback.php" style="color:whitesmoke">> Fill form  </a>
