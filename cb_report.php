@@ -83,7 +83,7 @@
                     <th>USN</th>
                     <?php
                         for($i = 1; $i <= $num; $i++) {
-                            echo "<th>Question ".$i."</th>";
+                            echo "<th>Qn ".$i."</th>";
                         }
                     ?>
                 </tr>
@@ -123,12 +123,55 @@
                     <th>Fairly Agree(2)</th>
                     <th>Disagree(1)</th>
                     <th>Average</th>
+                    <th>Level</th>
                 </tr>
+                <?php
+                $i = 1;
+                $query = "SELECT COUNT(DISTINCT usn) as count "
+                        ."FROM cb_feedback c, question q "
+                        ."WHERE q.qn_id = c.qn_id "
+                        ."AND sub_code='".$_POST['sub_code']."'";
+                $result = mysqli_query($db, $query);
+                $total = mysqli_fetch_assoc($result)['count'];
+                            foreach ($questions as $qn) {
+                                echo "<tr>\n";
+                                echo "<td>".$i++."</td>";
+                                
+                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='3';";
+                                $p = mysqli_query($db, $query);
+                                $p_strongly = mysqli_fetch_assoc($p);
+                                echo "<td>".$p_strongly['count']."</td>";
+                                
+                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='2';";
+                                $p = mysqli_query($db, $query);
+                                $p_fairly = mysqli_fetch_assoc($p);
+                                echo "<td>".$p_fairly['count']."</td>";
+                                
+                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='1';";
+                                $p = mysqli_query($db, $query);
+                                $p_disagree = mysqli_fetch_assoc($p);
+                                echo "<td>".$p_disagree['count']."</td>";
+                                
+                                $avg = 100*($p_strongly['count']*3 + $p_fairly['count']*2 + $p_disagree['count'] )/(3*$total);
+                                echo "<td>".round($avg,2)."</td>";
+                                
+                                if($avg >= 90) {
+                                echo "<td>3</td>";
+                            } elseif ($avg >= 80) {
+                            echo "<td>2</td>";
+                        } elseif($avg >= 60 )
+                            echo "<td>1</td>";
+                        else echo "<td>0</td>";
+                                
+                                echo "</tr>\n";
+                            }
+                ?>
             </table>
             
             <?php
             }
             ?>
         </div>
+        <div style="height:40px"></div>
     </body>
 </html>
