@@ -125,9 +125,9 @@
                 </caption>
                 <tr>
                     <th align="center">Question</th>
-                    <th align="center">Strongly Agree(3)</th>
-                    <th align="center">Fairly Agree(2)</th>
-                    <th align="center">Disagree(1)</th>
+                    <th align="center">Substantially(3)</th>
+                    <th align="center">Moderately(2)</th>
+                    <th align="center">Slightly(1)</th>
                     <th align="center">Percentage</th>
                     <th align="center">Level</th>
                     

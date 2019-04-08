@@ -80,9 +80,9 @@
                             and an engineering specialization 
                             to the solution of complex engineering problems.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po1" value="3" required > Strongly Agree</label><br>
-                        <label class="text-primary form-control"><input type="radio" name="po1" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control"><input type="radio" name="po1" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po1" value="3" required > Substantially</label><br>
+                        <label class="text-primary form-control"><input type="radio" name="po1" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control"><input type="radio" name="po1" value="1"> Slightly</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -95,9 +95,9 @@
                            using first principles of mathematics, natural sciences, 
                            and engineering sciences.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po2" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po2" value="2" required > Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po2" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po2" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po2" value="2" required > Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po2" value="1"> Slightly</label><br>
                     </div>
                 </div>
                 
@@ -111,9 +111,9 @@
                             for the public health and safety, 
                             and the cultural, societal, and environmental considerations.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po3" value="3" required > Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po3" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po3" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po3" value="3" required > Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po3" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po3" value="1"> Slightly</label><br>
                     </div>
                 </div>
 
@@ -125,9 +125,9 @@
                             Methods including design of experiments, analysis and interpretation of data, and synthesis of
                             the information to provide valid conclusions.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po4" required value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po4" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po4" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po4" required value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po4" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po4" value="1"> Slightly</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -140,9 +140,9 @@
                           modeling to complex engineering activities 
                           with an understanding of the limitations.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po5" value="3" required > Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po5" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po5" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po5" value="3" required > Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po5" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po5" value="1"> Slightly</label><br>
                     </div>   
                 </div>
                 
@@ -154,9 +154,9 @@
                             societal, health, safety, legal and cultural issues and the consequent responsibilities relevant
                             to the professional engineering practice. 
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po6" required value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po6" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po6" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po6" required value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po6" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po6" value="1"> Slightly</label><br>
                     </div>
                 </div>
 
@@ -169,9 +169,9 @@
                             in societal and environmental contexts, and demonstrate the knowledge of, 
                             and need for sustainable development.
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" required  name="po7" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po7" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po7" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" required  name="po7" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po7" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po7" value="1"> Slightly</label><br>
                     </div>
                 </div>
 
@@ -182,9 +182,9 @@
                            Ethics: Apply ethical principles  and commit to professional
                            ethics and responsibilities and norms of the engineering practice.
                         </p>
-                        <label class="text-primary form-control" >  <input required type="radio" name="po8" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po8" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po8" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input required type="radio" name="po8" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po8" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po8" value="1"> Slightly</label><br>
                     </div>
                 </div>
 
@@ -195,9 +195,9 @@
                            Individual and Team Work: Function effectively as an individual, 
                            and as a member or leader in diverse teams, and in multidisciplinary settings.
                         </p>
-                        <label class="text-primary form-control" >  <input required type="radio" name="po9" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po9" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po9" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input required type="radio" name="po9" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po9" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po9" value="1"> Slightly</label><br>
                     </div>
                 </div>
 
@@ -210,9 +210,9 @@
                            and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.  
 
                         </p>
-                        <label class="text-primary form-control" >  <input required type="radio" name="po10" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po10" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po10" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input required type="radio" name="po10" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po10" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po10" value="1"> Slightly</label><br>
                     </div> 
                 </div>
 
@@ -223,9 +223,9 @@
                          Life-long Learning: Recognize the need for, and have the preparation and ability to engage
                          in independent and life-long learning in the broadest context of technological change. 
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" required  name="po11" value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po11" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po11" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" required  name="po11" value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po11" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po11" value="1"> Slightly</label><br>
                     </div>
                 </div>
                 <div class="row">
@@ -236,9 +236,9 @@
                             engineering and management principles    and apply these to one‟s own work, as a member
                             and leader in a team, to manage projects and in multidisciplinary environments
                         </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="po12" required value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po12" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="po12" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="po12" required value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po12" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="po12" value="1"> Slightly</label><br>
                     </div>  
                 </div>
                 
@@ -250,9 +250,9 @@
                             PROBLEM SOLVING SKILLS  :The ability to solve problems using mathematical analysis, data structures, 
                             database management,algorithm, standard software engineering and professional practice to evolve optimal solutions.
                 </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="ps1" required value="3"> Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps1" required value="3"> Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps1" value="1"> Slightly</label><br>
                     </div>  
                 </div>
                 <div class="row">
@@ -262,9 +262,9 @@
                             PROFESSIONAL SKILLS:  The ability to understand the functionality of hardware and software aspects of 
                                computer systems and to comprehend, analyze, design, implement, test and conduct study in the domain of application development, computer network & security, software design and data mining.  
                     </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="ps2" value="3" required > Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps2" value="3" required > Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps2" value="1"> Slightly</label><br>
                     </div>  
                 </div>
                 <div class="row">
@@ -275,9 +275,9 @@
                     Exhibit skills required for a successful career in the industry based on principles of 
                     software project management, teamwork, ethical practices, develop the spirit of free enterprise and provide innovative ideas towards analysis.  
      </p>
-                        <label class="text-primary form-control" >  <input type="radio" name="ps3" value="3" required > Strongly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="2"> Fairly Agree</label><br>
-                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="1"> Disagree</label><br>
+                        <label class="text-primary form-control" >  <input type="radio" name="ps3" value="3" required > Substantially</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="2"> Moderately</label><br>
+                        <label class="text-primary form-control" ><input type="radio" name="ps3" value="1"> Slightly</label><br>
                     </div>  
                 </div>
                 
