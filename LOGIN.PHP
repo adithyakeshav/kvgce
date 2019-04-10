@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
         session_start();
-     $db = mysqli_connect("localhost","root","", "kvgengg");
+     $db = mysqli_connect("localhost","root","", "kvgce");
 ?>
 <html>
 <head>
