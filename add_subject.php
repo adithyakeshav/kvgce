@@ -46,7 +46,7 @@
             if(isset($_POST['view']) || isset($_POST['add']) ) { ?>
             <div class="form-inline ">
                     <label class="lead">Subject Name : </label>
-                    <input required type="text" readonly='true'
+                    <input required type="text" 
                            <?php
                                if(isset($_POST['view']) || isset($_POST['add'])) {
                                 $sub = mysqli_query($db, "SELECT * FROM subjects where subcode='".$_POST['sub_code']."';");
@@ -54,7 +54,7 @@
                                     echo "  value='".mysqli_fetch_assoc($sub)['Name']."' ";
                                }
                            ?>
-                           maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
+                           readonly='true' maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
                             <?php    }  ?>
             </div>
             
@@ -63,7 +63,7 @@
                     <div class="col-xs-6 row" >
                         <label class="lead col-xs-4">Subject Code: </label>
                         <?php  
-                               if(isset($_POST['view'])) { 
+                               if(isset($_POST['view']) || isset($_POST['add'])) { 
                                    echo " <input type='text' readonly='true' name='sub_code' class='form-control' value='".$_POST['sub_code']."'>";
                                     } else {?>
                        

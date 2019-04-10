@@ -9,16 +9,17 @@ include 'header.php';
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .mySlides {display:none;}
+.ams{
+    background-image: url("images/Slider2.jpg");
+    height: 400px;
+}
 
 </style>
 </head>
 
 <body>
-    <div class="container-fluid"  style="background-image:url('images/Slider2.jpg');height: 400px;opacity: 0.5">
-        <button type="submit" class="btn">Student Login</button>
-        <button type="submit" class="btn">Faculty Login</button>
-    </div>
-
+    <div class="ams"></div>
+  
 <footer>
     <div  style="background-color: #191970;height: 20px;margin-top: 20px;"></div>
 </footer>

@@ -39,9 +39,11 @@
                 <div class="row form-inline">
                     <select name="sub_code" class="form-control">
                         <?php
+                            $sub_list = array();
                             $subjects = mysqli_query($db, "SELECT distinct subcode from subfac where idn='".$_SESSION["user"]."';");
                             if(mysqli_num_rows($subjects) > 0) {
                                 while($subject = mysqli_fetch_assoc($subjects)) {
+                                    array_push($sub_list, $subject['subcode']);
                                     echo "<option>".$subject['subcode']."</option>";
                                 }
                             }
@@ -88,21 +90,18 @@
                     ?>
                 </tr>
                 <?php
-                    $query = "SELECT DISTINCT usn,name "
-                            ."FROM cb_feedback c,question q "
-                            ."WHERE q.qn_id=c.qn_id "
-                            ."AND sub_code='".$_POST['sub_code']."' "
-                            ."ORDER BY usn;";
-                    $result = mysqli_query($db, $query);
+                    $query = "select s1.Name,s1.USN,c.value from students s1,cb_feedback c,subfac f "
+                        ."WHERE s1.usn=c.usn and f.subcode='".$_POST['sub_code']."' and f.idn='".$_SESSION['user']."' ";
+                             $result = mysqli_query($db, $query);
                     if(mysqli_num_rows($result)>0) {
                         while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>\n";
-                            echo "<td>".$row['name']."</td>\n";
-                            echo "<td>".$row['usn']."</td>\n";
-                            foreach ($questions as $id) {
+                            echo "<td>".$row['Name']."</td>\n";
+                            echo "<td>".$row['USN']."</td>\n";
+                             foreach ($questions as $id) {
                                 $feedback = mysqli_query($db, "SELECT * "
                                         ."FROM cb_feedback "
-                                        ."WHERE usn='".$row['usn']."' AND "
+                                        ."WHERE usn='".$row['USN']."' AND "
                                         ."qn_id='".$id."';");
                                 echo "<td>".mysqli_fetch_assoc($feedback)['value']."</td>\n";
                             }
@@ -139,7 +138,7 @@
                 <?php
                 $i = 1;
                 
-                            foreach ($questions as $qn) {
+  if(isset($questions))   {  foreach ($questions as $qn) {
                                 echo "<tr>\n";
                                 echo "<td>".$i++."</td>";
                                 
@@ -170,7 +169,7 @@
                         else echo "<td>0</td>";
                                 
                                 echo "</tr>\n";
-                            }
+  } }
                 ?>
             </table>
             

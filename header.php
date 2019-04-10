@@ -104,7 +104,7 @@
                                 <?php }
                                 if(isset($_SESSION['user'])) {
                                 ?>
-                                 <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a>
+                                 <a href="add_subject.php" style="color:whitesmoke">> Add Questions  </a>
                                  <a href="cb_report.php"  style="color:whitesmoke"> >View Result</a>
                                 <?php } ?>
                              </div>
