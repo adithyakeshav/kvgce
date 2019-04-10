@@ -1,6 +1,11 @@
 <?php
     $db = mysqli_connect("localhost", "root", "", "kvgce");
     session_start();
+    
+           if(!isset($_SESSION['usn']) && !isset($_SESSION['user']) )
+    {
+        header("location:login.php");
+    }
 ?>
 <html>
     <head>
@@ -52,9 +57,9 @@
             <div class="col-md-10">
                 <br>
                 <p class="lead header-heading" align="center">
-                    KVG College of Engineering
+                    KVG College of Engineering 
                 </p>
-                <p class="lead header-address" align="center">
+                  <p class="lead header-address" align="center">
                     Kurunjibagh, Sullia, DK - 574327
                 </p>
             </div>
@@ -77,8 +82,11 @@
                         <li><a href="menu.php">Home</a></li>
                         <li><a data-target="#collap1" data-toggle='collapse'>Exit Programme Feedback</a></li>
                         <li> <div id="collap1" class="collapse" style="padding-top: 15px" >
+                                 <?php
+                                if(isset($_SESSION['usn'])) {
+                                ?>
                                  <a href="exit.php" style="color:whitesmoke">> Fill form  </a>
-                                <?php
+                                <?php }
                                 if(isset($_SESSION['user'])) {
                                 ?>
                                  <a href="view_exit.php"  style="color:whitesmoke"> >View Result</a>
@@ -89,8 +97,11 @@
                         <li><a data-target="#collap" data-toggle='collapse'>Content Beyond Feedback</a></li>
                         
                          <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
+                                  <?php
+                                if(isset($_SESSION['usn'])) {
+                                ?>
                                  <a href="cb_feedback.php" style="color:whitesmoke">> Fill form  </a>
-                                <?php
+                                <?php }
                                 if(isset($_SESSION['user'])) {
                                 ?>
                                  <a href="add_subject.php" style="color:whitesmoke">> Add Subject  </a>
@@ -100,13 +111,8 @@
                          </li>
                     </ul>
                     <ul class="navbar-nav nav navbar-right">
-                        <li>
-                            <?php
-                            if(isset($_SESSION['user']))
-                                echo '<a href="logout.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>';
-                            else
-                                echo '<a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Login</a>';
-                            ?>
+                        <li><a href="logout.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            
                         </li>
                     </ul>
                   </div>

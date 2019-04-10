@@ -39,10 +39,10 @@
                 <div class="row form-inline">
                     <select name="sub_code" class="form-control">
                         <?php
-                            $subjects = mysqli_query($db, "SELECT sub_code from subject;");
+                            $subjects = mysqli_query($db, "SELECT distinct subcode from subfac where idn='".$_SESSION["user"]."';");
                             if(mysqli_num_rows($subjects) > 0) {
                                 while($subject = mysqli_fetch_assoc($subjects)) {
-                                    echo "<option>".$subject['sub_code']."</option>";
+                                    echo "<option>".$subject['subcode']."</option>";
                                 }
                             }
                         ?>

@@ -8,6 +8,6 @@ if(isset($_GET['qn']))
          mysqli_query($db, "delete from cb_feedback where qn_id='$id';");
          mysqli_query($db, "delete from question where qn_id='$id';");
        
-         header("location:add_subject.php");
+         header("location:co_questions.php");
         ?>
  

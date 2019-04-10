@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_unset();
-header("location:menu.php");
+header("location:login.php");
 ?>
 

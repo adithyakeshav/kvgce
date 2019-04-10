@@ -2,6 +2,8 @@
 <?php
         session_start();
      $db = mysqli_connect("localhost","root","", "kvgce");
+     if(isset($_SESSION['user']) || isset($_SESSION['usn']))
+         header("location:menu.php");
 ?>
 <html>
 <head>
@@ -17,7 +19,7 @@
            <link rel="shortcut icon" href="images/kvg_logo.jpg"/>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;color : #132853; }
-form {border: 3px solid #f1f1f1;}
+.ams {border: 3px solid #f1f1f1;}
 
 img.avatar {
   width: 20%;
@@ -49,17 +51,18 @@ img.avatar {
       }
   </script>
 </head>
-<body style="background-color: lightseagreen">
+<body style="background-color: gray">
     <div style="height:50px"></div>
     <div class="row">
         <div class="col-xs-4"></div>
         
-        <div class="col-xs-4"  style="background-color:white;text-align: center"> 
-             <br><h1>Login Form</h1><br>
+        <div class="col-xs-4 "  style="background-color:white;text-align: center"> 
+           <br> <div class="ams">
+             <h1>Login Form</h1><br>
             <div align="center">
                 <img src="images/avatar.png"  class="avatar">
             </div>
-            <div style="padding:30px">
+             <div style="padding:30px" >
                 <select id="ty" name="ty" class="form-control" onchange="execch()">
                     <option value="1"> Student</option>
                     <option value="2">Faculty</option>
@@ -85,7 +88,10 @@ img.avatar {
                     $sql = "select * from students where USN='".$_POST["usn"]."' and parnum='".$_POST['passwd']."';";
                     $result = mysqli_query($db, $sql);
                     if ( mysqli_num_rows($result) > 0 )  {
-                            $_SESSION["student"] = $_POST["uname"];
+                        $row = mysqli_fetch_assoc($result);
+                            $_SESSION["usn"] = $row["USN"];
+                            $_SESSION["name"] = $row["Name"];
+                            $_SESSION['sem']=$row["sem"];
                             header("location:menu.php");
                     }    else {
                         $error=1;
@@ -95,8 +101,9 @@ img.avatar {
                 $sql = "select * from faculty where email='".$_POST["uname"]."' and pass='".$_POST['passwd']."';";
                     $result = mysqli_query($db, $sql);
                     if ( mysqli_num_rows($result) > 0 )  {
-                            $_SESSION["user"] = $_POST["uname"];
-                            header("location:menu.php");
+                        $row = mysqli_fetch_assoc($result);
+                                 $_SESSION["user"] = $row['idn'];
+                           header("location:menu.php");
                     }    else {
                         $error=1;
                     }
@@ -108,7 +115,7 @@ img.avatar {
                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               Incorrect <b>username</b> or <b>password</b> try again ! 
              </div><br><?php } ?>
-        </div>
+           </div><br></div>
         <div class="col-xs-4"></div>
     </div>
  

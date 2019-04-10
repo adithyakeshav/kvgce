@@ -102,7 +102,7 @@
                                             <div class="col-xs-8">
                                                 <p class="lead text-justify"><?php echo  $row1['statement']; ?> </p></div>
                                                      <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
-                                                     <div class="col-xs-1"><a href="delete.php?qn=<?php echo $row1['qn_id']; ?>" class="fa fa-trash lead"></a></div>
+                                                     <div class="col-xs-1"><a href="co_delete.php?qn=<?php echo $row1['qn_id']; ?>" class="fa fa-trash lead"></a></div>
                                              </div>
 <?php        
                                     $i=$i+1;    }

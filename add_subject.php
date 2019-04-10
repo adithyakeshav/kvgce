@@ -19,12 +19,8 @@
         <div class="container">
             <?php 
             if(isset($_POST['submit'])) {
-                $sub_name = strtoupper($_POST['sub_name']);
-                $sub_code = strtoupper($_POST['sub_code']);
-                $query = "INSERT INTO subject VALUES('".$sub_name."','".$sub_code."');";
-
-                $insert_sub = mysqli_query($db, $query);
-            ?>
+                               $sub_code = strtoupper($_POST['sub_code']);
+               ?>
             <div class="form-inline">
                 <p class="lead txt txt-danger">
                     <?php 
@@ -50,14 +46,13 @@
             if(isset($_POST['view']) || isset($_POST['add']) ) { ?>
             <div class="form-inline ">
                     <label class="lead">Subject Name : </label>
-                    <input required type="text" autocomplete="off"
+                    <input required type="text" readonly='true'
                            <?php
-                               if(isset($_POST['view'])) {
-                                $sub = mysqli_query($db, "SELECT * FROM subject where sub_code='".$_POST['sub_code']."';");
+                               if(isset($_POST['view']) || isset($_POST['add'])) {
+                                $sub = mysqli_query($db, "SELECT * FROM subjects where subcode='".$_POST['sub_code']."';");
                                 if(mysqli_num_rows($sub) >0)
-                                    echo " readonly='true' value='".mysqli_fetch_assoc($sub)['sub_name']."' ";
-                               }else
-                                   echo " readonly='true' value='".$_POST['sub_name']."' ";
+                                    echo "  value='".mysqli_fetch_assoc($sub)['Name']."' ";
+                               }
                            ?>
                            maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
                             <?php    }  ?>
@@ -67,24 +62,24 @@
             <div class="form-inline row">
                     <div class="col-xs-6 row" >
                         <label class="lead col-xs-4">Subject Code: </label>
-                        <input
-                            required
-                            type="text" 
-                            autocomplete="off"
-                            maxlength="40"
-                            <?php
-                            if(isset($_POST['view']) ||isset($_POST['add']) ) {
-                                echo " readonly='true' value='".$_POST['sub_code']."' ";
+                        <?php  
+                               if(isset($_POST['view'])) { 
+                                   echo " <input type='text' readonly='true' name='sub_code' class='form-control' value='".$_POST['sub_code']."'>";
+                                    } else {?>
+                       
+                          <select name="sub_code" class="form-control">
+                        <?php
+                            $subjects = mysqli_query($db, "SELECT distinct subcode from subfac where idn='".$_SESSION["user"]."';");
+                            if(mysqli_num_rows($subjects) > 0) {
+                                while($subject = mysqli_fetch_assoc($subjects)) {
+                                    echo "<option>".$subject['subcode']."</option>";
+                                }
                             }
-                           ?>
-                            class="col-xs-8  form-control" 
-                            name="sub_code" 
-                            placeholder="Code">
-                    </div>
+                        ?>
+                               </select> <?php } ?>   </div>
                   
             </div>
-            <br>
-            
+      
             <?php
             
              if(!isset($_POST['view']) ) {
@@ -104,7 +99,7 @@
                                             <div class="col-xs-8">
                                                 <p class="lead text-justify"><?php echo  $row1['statement']; ?> </p></div>
                                                      <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
-                                                     <div class="col-xs-1"><a href="delete.php?qn=<?php echo $row1['qn_id']; ?>" class="fa fa-trash lead"></a></div>
+                                                     <div class="col-xs-1"><a href="cb_delete.php?qn=<?php echo $row1['qn_id']; ?>" class="fa fa-trash lead"></a></div>
                                              </div>
 <?php        
                                     $i=$i+1;    }
