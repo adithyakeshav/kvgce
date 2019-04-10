@@ -14,7 +14,7 @@
         <style>
             table, th, tr, td, caption {
                                                                     text-align: center;
-			padding:10px;
+			padding:5px;
 			border: 0.5px solid #132853;
                                                                     color: #132853;
                       
@@ -62,7 +62,7 @@
                 {
                 
             ?>
-        <table align='center'>
+        <table align="center" >
 
         <caption><b>Exit Feedback - <?php echo $year; ?> </b></caption>
         <th>Name</th>
@@ -79,9 +79,9 @@
         <th>P010</th>
         <th>P011</th>
         <th>P012</th>
-        <th>PS1</th>
-        <th>PS2</th>
-        <th>PS3</th>
+        <th>PSO1</th>
+        <th>PSO2</th>
+        <th>PSO3</th>
         </tr>
 
 
@@ -141,7 +141,7 @@
                 ?>
                 <tr>
                     <td><b>
-                        <?php echo $question; ?>
+                        <?php echo "PO".$i; ?>
                         </b></td>
                     <td>
                         <?php
@@ -195,7 +195,7 @@
                 
                 <tr>
                     <td><b>
-                        <?php echo $question; ?>
+                        <?php echo "PSO".$i; ?>
                         </b></td>
                     <td>
                         <?php

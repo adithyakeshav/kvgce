@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <?php 
 include 'header.php';
@@ -15,31 +14,13 @@ include 'header.php';
 </head>
 
 <body>
+    <div class="container-fluid"  style="background-image:url('images/Slider2.jpg');height: 400px;opacity: 0.5">
+        <button type="submit" class="btn">Student Login</button>
+        <button type="submit" class="btn">Faculty Login</button>
+    </div>
 
-
-<div class="w3-content w3-section" >
-    <img class="mySlides" src="images/Slide1.jpg" style="width:100%">
-    <img class="mySlides" src="images/Slider2.jpg" style="width:100%">
-</div>
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000); // Change image every 2 seconds
-}
-</script>
 <footer>
-    <div  style="background-color: #191970;height: 50px"></div>
+    <div  style="background-color: #191970;height: 20px;margin-top: 20px;"></div>
 </footer>
 </body>
 </html>

@@ -130,9 +130,9 @@
                 ?>
                 </caption>
                 <tr><th>Question</th>
-                    <th>Strongly Agree(3)</th>
-                    <th>Fairly Agree(2)</th>
-                    <th>Disagree(1)</th>
+                    <th>Excellent(3)</th>
+                    <th>Good(2)</th>
+                    <th>Satisfactory(1)</th>
                     <th>Average</th>
                     <th>Level</th>
                 </tr>

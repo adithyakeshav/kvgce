@@ -111,14 +111,14 @@ if(isset($_POST['submit'])) {
                                                     <input type="radio"
                                                            <?php echo "name='qn".$row1['qn_id']."' \n" ?>
                                                            required value="3">
-                                                    Strongly Agree
+                                                    Excellent
                                                 </label><br>
                                                 <label class="text-primary form-control" ><input type="radio" 
                                                                                          <?php echo "name='qn".$row1['qn_id']."' \n" ?>        
-                                                                                                 value="2"> Fairly Agree</label><br>
+                                                                                                 value="2"> Good</label><br>
                                                 <label class="text-primary form-control" ><input type="radio" 
                                                                                                  <?php echo "name='qn".$row1['qn_id']."' \n" ?>
-                                                                                                 value="1"> Disagree</label><br>
+                                                                                                 value="1"> Satisfactory</label><br>
                                             </div>  
                                             <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
                                         </div>
