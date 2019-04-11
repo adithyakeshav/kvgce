@@ -23,11 +23,11 @@
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <style>
                body {
-                color : #191970;
+                color : #483d8b;
                 background-color: lightyellow;
             }
             .navbar  {
-                background-color : #191970;
+                background-color : #483d8b;
                 border-left: 0;
                 border-right: 0;         
             }
@@ -78,39 +78,8 @@
 
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
-                    <ul class="navbar-nav nav navbar-left">
-                        <li><a href="menu.php">Home</a></li>
-                        <li><a data-target="#collap1" data-toggle='collapse'>Exit Programme Feedback</a></li>
-                        <li> <div id="collap1" class="collapse" style="padding-top: 15px" >
-                                 <?php
-                                if(isset($_SESSION['usn'])) {
-                                ?>
-                                 <a href="exit.php" style="color:whitesmoke">> Fill form  </a>
-                                <?php }
-                                if(isset($_SESSION['user'])) {
-                                ?>
-                                 <a href="view_exit.php"  style="color:whitesmoke"> >View Result</a>
-                                <?php } ?>
-                             </div>
-                         </li>
-                        
-                        <li><a data-target="#collap" data-toggle='collapse'>Content Beyond Feedback</a></li>
-                        
-                         <li> <div id="collap" class=" collapse" style="padding-top: 15px" >
-                                  <?php
-                                if(isset($_SESSION['usn'])) {
-                                ?>
-                                 <a href="cb_feedback.php" style="color:whitesmoke">> Fill form  </a>
-                                <?php }
-                                if(isset($_SESSION['user'])) {
-                                ?>
-                                 <a href="add_subject.php" style="color:whitesmoke">> Add Questions  </a>
-                                 <a href="cb_report.php"  style="color:whitesmoke"> >View Result</a>
-                                <?php } ?>
-                             </div>
-                         </li>
-                    </ul>
                     <ul class="navbar-nav nav navbar-right">
+                        <li><a href="menu.php" >Home</a></li>
                         <li><a href="logout.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                             
                         </li>
