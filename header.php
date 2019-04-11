@@ -44,7 +44,9 @@
             .fa-sign-in {
                 font-size: 20px;
             }
-            
+            #Nav ul li a {
+                color: white;
+            }
             
 
         </style>

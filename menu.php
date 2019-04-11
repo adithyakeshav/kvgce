@@ -14,7 +14,6 @@ include 'header.php';
     height: 300px;
 }
 
-
 </style>
 </head>
 
