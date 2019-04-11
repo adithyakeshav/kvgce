@@ -19,10 +19,8 @@
         <div class="container">
             <?php 
             if(isset($_POST['submit'])) {
-              
-                $sub_code = strtoupper($_POST['sub_code']);
-                
-            ?>
+                               $sub_code = strtoupper($_POST['sub_code']);
+               ?>
             <div class="form-inline">
                 <p class="lead txt txt-danger">
                     <?php 
@@ -30,7 +28,7 @@
                     for($i=1; $i<13; $i++) {
                         if(isset($_POST["question".$i])) {
                             $insert_qn = mysqli_query($db, 
-                                    "INSERT INTO question VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');");
+                                    "INSERT INTO co_questions VALUES('','".$_POST["question".$i]."','".$_POST['criteria'.$i]."','".$sub_code."');");
                             
                             if(!$insert_qn) {
                                 echo "<script>"
@@ -48,16 +46,15 @@
             if(isset($_POST['view']) || isset($_POST['add']) ) { ?>
             <div class="form-inline ">
                     <label class="lead">Subject Name : </label>
-                    <input required type="text" autocomplete="off"
+                    <input required type="text" 
                            <?php
-                               if(isset($_POST['view'])) {
+                               if(isset($_POST['view']) || isset($_POST['add'])) {
                                 $sub = mysqli_query($db, "SELECT * FROM subjects where subcode='".$_POST['sub_code']."';");
                                 if(mysqli_num_rows($sub) >0)
-                                    echo " readonly='true' value='".mysqli_fetch_assoc($sub)['Name']."' ";
-                               }else
-                                   echo " readonly='true' value='".$_POST['sub_name']."' ";
+                                    echo "  value='".mysqli_fetch_assoc($sub)['Name']."' ";
+                               }
                            ?>
-                           maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
+                           readonly='true' maxlength="40" name='sub_name' placeholder="Subject Name" class="form-control">
                             <?php    }  ?>
             </div>
             
@@ -65,24 +62,24 @@
             <div class="form-inline row">
                     <div class="col-xs-6 row" >
                         <label class="lead col-xs-4">Subject Code: </label>
-                        <input
-                            required
-                            type="text" 
-                            autocomplete="off"
-                            maxlength="40"
-                            <?php
-                            if(isset($_POST['view']) ||isset($_POST['add']) ) {
-                                echo " readonly='true' value='".$_POST['sub_code']."' ";
+                        <?php  
+                               if(isset($_POST['view']) || isset($_POST['add'])) { 
+                                   echo " <input type='text' readonly='true' name='sub_code' class='form-control' value='".$_POST['sub_code']."'>";
+                                    } else {?>
+                       
+                          <select name="sub_code" class="form-control">
+                        <?php
+                            $subjects = mysqli_query($db, "SELECT distinct subcode from subfac where idn='".$_SESSION["user"]."';");
+                            if(mysqli_num_rows($subjects) > 0) {
+                                while($subject = mysqli_fetch_assoc($subjects)) {
+                                    echo "<option>".$subject['subcode']."</option>";
+                                }
                             }
-                           ?>
-                            class="col-xs-8  form-control" 
-                            name="sub_code" 
-                            placeholder="Code">
-                    </div>
+                        ?>
+                               </select> <?php } ?>   </div>
                   
             </div>
-            <br>
-            
+      
             <?php
             
              if(!isset($_POST['view']) ) {
@@ -92,7 +89,7 @@
              } 
              
              else  {   
-           $query = mysqli_query($db,"SELECT * FROM question WHERE sub_code='".$_POST['sub_code']."' ORDER BY criteria ;  ");
+           $query = mysqli_query($db,"SELECT * FROM co_questions WHERE sub_code='".$_POST['sub_code']."' ORDER BY criteria ;  ");
           $i=1; 
           if (mysqli_num_rows($query) > 0) {
               echo "<div class='jumbotron'>";
@@ -156,7 +153,7 @@
                                     <?php 
                                     echo "name='criteria".$i."' >\n";
                                     for($j=1; $j<=12; $j++) { ?>
-                                    <option><?php echo "po".$j  ?></option>
+                                    <option><?php echo "CO".$j  ?></option>
                                     <?php   }   ?>
                                 </select>
                             </div>

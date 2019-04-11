@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
     $variables = array_keys($_POST);
     foreach($variables as $key) {
         if(startsWith( $key, "qn" )) {
-            $query = "INSERT INTO cb_feedback VALUES('".$usn."','". substr($key, 2)."','".$_POST[$key]."','".$_POST['name']."')";
+            $query = "INSERT INTO co_feedback VALUES('".$usn."','". substr($key, 2)."','".$_POST[$key]."')";
             if(!mysqli_query($db, $query)) {
                 echo "<script>"
                 . "alert('Given student has already given the Feedback for given subject once');"
@@ -35,43 +35,30 @@ if(isset($_POST['submit'])) {
             <form method="post">
                 <div class="container jumbotron row" >
                     <p  align="center"><font size="+3">Department of Computer Science and Engineering</font></p>
-                    <p  align="center"> <font size="+2">  BE Students Exit Feedback</font> </p>
+                    <p  align="center"> <font size="+2">  BE Students Content Beyond Feedback</font> </p>
                     <div class="row">
-                        <div class="col-md-4"> <br><p><font size="+1">Name :  <br>
-                                <input type="text"  name="name"
-                                       <?php  
-                                       if(isset($_POST['show'])) {
-                                               echo "readonly='true'\n value='".$_POST['name']."' \n";
-                                       }
-                                       ?>
-                                       class="form-control" required></font></p>
+                        <div class="col-md-4"> <br><p><font size="+1">Name  <br>
+                                <input type="text"  name="name"  <?php echo "value='".$_SESSION['name']."' " ?> readonly="true" class="form-control"></font></p>
                         </div>
                         <div class="col-md-4"> <br>
-                            <p><font size="+1">USN :<br> 
-                                <input type="text" name="usn"  minlength="10"
-                                       <?php  
-                                       if(isset($_POST['show'])) {
-                                               echo "readonly='true'\n value='".$_POST['usn']."' \n";
-                                       }
-                                       ?>
-                                       pattern="[4][kK][vV][1-9]{2}[cC][sS][0-9]{3}"
-                                       maxlength="10" class="form-control" required>
+                            <p><font size="+1">USN <br> 
+                                <input type="text" name="usn"  <?php echo "value='".$_SESSION['usn']."' " ?> readonly="true" class="form-control">
                                 </font></p>
                         </div>
 
                         <div class="col-md-4"> <br>
                             
                             <p>
-                                <font size="+1">Subject Code : <br>
+                                <font size="+1">Subject Code <br>
                                 <?php   
                                 if(!isset($_POST['show'])) {
                                 ?>
                                 <select name="code" class="form-control">
                                     <?php
-                                    $code = mysqli_query($db, "SELECT sub_code FROM subject;");
-                                    if (mysqli_num_rows($code) > 0) {
+                                    $code = mysqli_query($db, "SELECT distinct subcode FROM subjects where sem='".$_SESSION['sem']."';");
+                                       if (mysqli_num_rows($code) > 0) {
                                         while ($row = mysqli_fetch_assoc($code)) {
-                                            echo "<option value='" . $row['sub_code'] . "'>" . $row['sub_code'] . "</option>\n";
+                                            echo "<option value='" . $row['subcode'] . "'>" . $row['subcode'] . "</option>\n";
                                         }
                                     }
                                     ?>
@@ -98,7 +85,7 @@ if(isset($_POST['submit'])) {
                 </div>
        <?php 
        if(isset($_POST['show'])){
-           $query = mysqli_query($db,"SELECT * FROM question WHERE sub_code='".$_POST['code']."' ORDER BY criteria ;  ");
+           $query = mysqli_query($db,"SELECT * FROM co_questions WHERE sub_code='".$_POST['code']."' ORDER BY criteria ;  ");
           $i=1; 
           if (mysqli_num_rows($query) > 0) {
                                         while ($row1 = mysqli_fetch_assoc($query)) {   ?>
@@ -111,14 +98,14 @@ if(isset($_POST['submit'])) {
                                                     <input type="radio"
                                                            <?php echo "name='qn".$row1['qn_id']."' \n" ?>
                                                            required value="3">
-                                                    Strongly Agree
+                                                    Excellent
                                                 </label><br>
                                                 <label class="text-primary form-control" ><input type="radio" 
                                                                                          <?php echo "name='qn".$row1['qn_id']."' \n" ?>        
-                                                                                                 value="2"> Fairly Agree</label><br>
+                                                                                                 value="2"> Good</label><br>
                                                 <label class="text-primary form-control" ><input type="radio" 
                                                                                                  <?php echo "name='qn".$row1['qn_id']."' \n" ?>
-                                                                                                 value="1"> Disagree</label><br>
+                                                                                                 value="1"> Satisfactory</label><br>
                                             </div>  
                                             <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
                                         </div>
@@ -132,6 +119,6 @@ if(isset($_POST['submit'])) {
                 </div>
        <?php   }    ?>
             </form>
-        </div>
+        </div><br>
     </body>
 </html>

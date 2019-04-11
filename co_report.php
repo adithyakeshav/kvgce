@@ -39,10 +39,12 @@
                 <div class="row form-inline">
                     <select name="sub_code" class="form-control">
                         <?php
-                            $subjects = mysqli_query($db, "SELECT sub_code from subject;");
+                            $sub_list = array();
+                            $subjects = mysqli_query($db, "SELECT distinct subcode from subfac where idn='".$_SESSION["user"]."';");
                             if(mysqli_num_rows($subjects) > 0) {
                                 while($subject = mysqli_fetch_assoc($subjects)) {
-                                    echo "<option>".$subject['sub_code']."</option>";
+                                    array_push($sub_list, $subject['subcode']);
+                                    echo "<option>".$subject['subcode']."</option>";
                                 }
                             }
                         ?>
@@ -53,7 +55,7 @@
             <br>
             <?php
             if(isset($_POST['submit'])) {
-                $query = mysqli_query($db,"SELECT * FROM question WHERE sub_code='".$_POST['sub_code']."' ORDER BY criteria ;  ");
+                $query = mysqli_query($db,"SELECT * FROM co_questions WHERE sub_code='".$_POST['sub_code']."' ORDER BY criteria ;  ");
           $i=1; 
           if (mysqli_num_rows($query) > 0) {
               $questions = array();
@@ -88,21 +90,18 @@
                     ?>
                 </tr>
                 <?php
-                    $query = "SELECT DISTINCT usn,name "
-                            ."FROM cb_feedback c,question q "
-                            ."WHERE q.qn_id=c.qn_id "
-                            ."AND sub_code='".$_POST['sub_code']."' "
-                            ."ORDER BY usn;";
-                    $result = mysqli_query($db, $query);
+                    $query = "select s1.Name,s1.USN,c.value from students s1,co_feedback c,subfac f "
+                        ."WHERE s1.usn=c.usn and f.subcode='".$_POST['sub_code']."' and f.idn='".$_SESSION['user']."' ";
+                             $result = mysqli_query($db, $query);
                     if(mysqli_num_rows($result)>0) {
                         while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>\n";
-                            echo "<td>".$row['name']."</td>\n";
-                            echo "<td>".$row['usn']."</td>\n";
-                            foreach ($questions as $id) {
+                            echo "<td>".$row['Name']."</td>\n";
+                            echo "<td>".$row['USN']."</td>\n";
+                             foreach ($questions as $id) {
                                 $feedback = mysqli_query($db, "SELECT * "
-                                        ."FROM cb_feedback "
-                                        ."WHERE usn='".$row['usn']."' AND "
+                                        ."FROM co_feedback "
+                                        ."WHERE usn='".$row['USN']."' AND "
                                         ."qn_id='".$id."';");
                                 echo "<td>".mysqli_fetch_assoc($feedback)['value']."</td>\n";
                             }
@@ -121,7 +120,7 @@
                 <caption>
                     <?php
                     $query = "SELECT COUNT(DISTINCT usn) as count "
-                        ."FROM cb_feedback c, question q "
+                        ."FROM co_feedback c, co_questions q "
                         ."WHERE q.qn_id = c.qn_id "
                         ."AND sub_code='".$_POST['sub_code']."'";
                     $result = mysqli_query($db, $query);
@@ -130,30 +129,30 @@
                 ?>
                 </caption>
                 <tr><th>Question</th>
-                    <th>Strongly Agree(3)</th>
-                    <th>Fairly Agree(2)</th>
-                    <th>Disagree(1)</th>
+                    <th>Excellent(3)</th>
+                    <th>Good(2)</th>
+                    <th>Satisfactory(1)</th>
                     <th>Average</th>
                     <th>Level</th>
                 </tr>
                 <?php
                 $i = 1;
                 
-                            foreach ($questions as $qn) {
+  if(isset($questions))   {  foreach ($questions as $qn) {
                                 echo "<tr>\n";
                                 echo "<td>".$i++."</td>";
                                 
-                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='3';";
+                                $query = "SELECT COUNT(*) as count FROM co_feedback WHERE qn_id='".$qn."' AND value='3';";
                                 $p = mysqli_query($db, $query);
                                 $p_strongly = mysqli_fetch_assoc($p);
                                 echo "<td>".$p_strongly['count']."</td>";
                                 
-                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='2';";
+                                $query = "SELECT COUNT(*) as count FROM co_feedback WHERE qn_id='".$qn."' AND value='2';";
                                 $p = mysqli_query($db, $query);
                                 $p_fairly = mysqli_fetch_assoc($p);
                                 echo "<td>".$p_fairly['count']."</td>";
                                 
-                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='1';";
+                                $query = "SELECT COUNT(*) as count FROM co_feedback WHERE qn_id='".$qn."' AND value='1';";
                                 $p = mysqli_query($db, $query);
                                 $p_disagree = mysqli_fetch_assoc($p);
                                 echo "<td>".$p_disagree['count']."</td>";
@@ -170,7 +169,7 @@
                         else echo "<td>0</td>";
                                 
                                 echo "</tr>\n";
-                            }
+  } }
                 ?>
             </table>
             
