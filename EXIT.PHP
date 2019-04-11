@@ -39,13 +39,11 @@
                 <p  align="center"> <font size="+2">  BE Students Exit Feedback</font> </p>
                 <div class="row">
                     <div class="col-xs-4"> <br><p><font size="+1">Name :  <br>
-                            <input type="text" pattern="[a-zA-Z]{4,}" name="name" class="form-control" required></font></p>
+                            <input type="text"  name="name" class="form-control"  <?php echo "value='".$_SESSION['name']."' " ?> readonly="true"></font></p>
                     </div>
                     <div class="col-xs-4"> <br>
                         <p><font size="+1">USN :<br> 
-                            <input type="text" name="usn"  minlength="10"
-                                   pattern="[4][kK][vV][1-9]{2}[cC][sS][0-9]{3}"
-                                   maxlength="10" class="form-control" required>
+                            <input type="text" name="usn" <?php echo "value='".$_SESSION['usn']."' " ?> readonly="true" class="form-control" >
                             </font></p>
                     </div>
 
