@@ -18,8 +18,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
            <link rel="shortcut icon" href="images/kvg_logo.jpg"/>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;color : #132853; }
-.ams {border: 3px solid #f1f1f1;}
+body {font-family: Arial, Helvetica, sans-serif;color : steelblue; }
+.ams {border: 3px solid steelblue;}
 
 img.avatar {
   width: 20%;
@@ -51,14 +51,14 @@ img.avatar {
       }
   </script>
 </head>
-<body style="background-color: gray">
+<body style="background-color: lightsteelblue">
     <div style="height:50px"></div>
     <div class="row">
         <div class="col-xs-4"></div>
         
         <div class="col-xs-4 "  style="background-color:white;text-align: center"> 
            <br> <div class="ams">
-             <h1>Login Form</h1><br>
+               <h1><i>Login Form</i></h1><br>
             <div align="center">
                 <img src="images/avatar.png"  class="avatar">
             </div>

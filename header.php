@@ -29,7 +29,8 @@
             .navbar  {
                 background-color : #483d8b;
                 border-left: 0;
-                border-right: 0;         
+                border-right: 0;   
+                
             }
              
             .header-heading {
@@ -80,6 +81,9 @@
 
                 </div>
                 <div id="Nav" class="navbar-collapse collapse">
+                    <ul class="navbar-nav nav navbar-left">
+                        <li style="color:white;padding-top: 12px"> <marquee width="120%">Center of pure learning experience</marquee></li>
+                    </ul>
                     <ul class="navbar-nav nav navbar-right">
                         <li><a href="menu.php" >Home</a></li>
                         <li><a href="logout.php" ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
