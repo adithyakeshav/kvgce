@@ -57,7 +57,7 @@ include 'header.php';
                                 ?>
             <a class="btn btn-default " href="view_exit.php">View Result</a>
                                   <?php } ?>
-            <br> <br></div>
+            <br></div>
         <div>
             <h2><i>Content Beyond Feedback</i></h2>
             <p  style="text-align:justify">
@@ -73,7 +73,7 @@ include 'header.php';
             <a class="btn btn-default " href="cb_questions.php">Add Questions</a>
          <a class="btn btn-default " href="cb_report.php">View Result</a>
                                   <?php } ?>
-            <br> <br></div>
+             <br></div>
         
         <div>
             <h2><i>Course Outcome Feedback</i></h2>
@@ -89,7 +89,22 @@ include 'header.php';
             <a class="btn btn-default " href="co_questions.php">Add Questions</a>
             <a class="btn btn-default " href="co_report.php">View Result</a>
                                   <?php } ?>
-            <br> <br><br></div>
+            <br></div>
+            <div >
+            <h2><i>Facility Feedback</i></h2>
+
+   
+             <?php
+                                if(isset($_SESSION['usn'])) {
+                                ?>
+            <a class="btn btn-default " href="facility.php">Fill Form</a>
+                                <?php }
+                                if(isset($_SESSION['user'])) {
+                                ?>
+            <a class="btn btn-default " href="view_facility.php">View Result</a>
+                                  <?php } ?>
+            <br> <br></div>
+     
         </div>
     </div><br><br>
         
