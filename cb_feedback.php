@@ -97,8 +97,14 @@ if(isset($_POST['submit'])) {
                                                 <label class="text-primary form-control" >  
                                                     <input type="radio"
                                                            <?php echo "name='qn".$row1['qn_id']."' \n" ?>
-                                                           required value="3">
+                                                           required value="4">
                                                     Excellent
+                                                </label><br>
+                                                <label class="text-primary form-control" >  
+                                                    <input type="radio"
+                                                           <?php echo "name='qn".$row1['qn_id']."' \n" ?>
+                                                           required value="3">
+                                                    Very Good
                                                 </label><br>
                                                 <label class="text-primary form-control" ><input type="radio" 
                                                                                          <?php echo "name='qn".$row1['qn_id']."' \n" ?>        
@@ -107,7 +113,7 @@ if(isset($_POST['submit'])) {
                                                                                                  <?php echo "name='qn".$row1['qn_id']."' \n" ?>
                                                                                                  value="1"> Satisfactory</label><br>
                                             </div>  
-                                            <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
+                                            <div class="col-xs-2"><b><?php  echo "Relevance : ".$row1['criteria']; ?></b></div>
                                         </div>
 <?php        
                                     $i=$i+1;    }

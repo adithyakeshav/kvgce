@@ -98,7 +98,7 @@
                                             <div class="col-xs-1 lead"><?php echo $i; ?></div>
                                             <div class="col-xs-8">
                                                 <p class="lead text-justify"><?php echo  $row1['statement']; ?> </p></div>
-                                                     <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
+                                                     <div class="col-xs-2"><b><?php  echo "Relevance : ".$row1['criteria']; ?></b></div>
                                                      <div class="col-xs-1"><a href="co_delete.php?qn=<?php echo $row1['qn_id']; ?>" class="fa fa-trash lead"></a></div>
                                              </div>
 <?php        
@@ -134,7 +134,7 @@
                             <label class="lead">Question <?php echo $i; ?> :</label>
                         </div>
                         <div class="col-xs-3">
-                            <label class="lead">Criteria :</label>
+                            <label class="lead">Relevance :</label>
                         </div>
                     </div>
                 

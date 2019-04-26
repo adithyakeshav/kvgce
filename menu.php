@@ -19,7 +19,7 @@ include 'header.php';
 
 <body>
     <div class="container-fluid" >
-<div class="col-xs-9">
+<div class="col-md-9">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -43,7 +43,7 @@ include 'header.php';
 
   </div>
 </div>
-        <div class="col-xs-3" style="background-color:#483d8b;color: white;">
+        <div class="col-md-3" style="background-color:#483d8b;color: white;">
      <div >
             <h2><i>Programme Exit Feedback</i></h2>
 

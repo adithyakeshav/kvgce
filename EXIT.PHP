@@ -36,7 +36,7 @@
            <form method="post">
             <div class="container jumbotron " >
                 <p  align="center"><font size="+3">Department of Computer Science and Engineering</font></p>
-                <p  align="center"> <font size="+2">  BE Students Exit Feedback</font> </p>
+                <p  align="center"> <font size="+2">  BE Students Programme Exit Feedback</font> </p>
                 <div class="row">
                     <div class="col-xs-4"> <br><p><font size="+1">Name :  <br>
                             <input type="text"  name="name" class="form-control"  <?php echo "value='".$_SESSION['name']."' " ?> readonly="true"></font></p>
@@ -269,7 +269,7 @@
                     <div class="col-xs-1 lead">15</div>
                     <div class="col-xs-11">
                         <p class="lead text-justify">
-                             ETHICS AND CAREER DEVELOPMENT :
+                         ETHICS AND CAREER DEVELOPMENT :
                     Exhibit skills required for a successful career in the industry based on principles of 
                     software project management, teamwork, ethical practices, develop the spirit of free enterprise and provide innovative ideas towards analysis.  
      </p>

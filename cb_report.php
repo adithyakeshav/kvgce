@@ -66,7 +66,7 @@
                 <div class="col-xs-9">
                     <p class="lead text-justify"><?php echo  $row1['statement']; ?> </p>
                 </div>
-                <div class="col-xs-2"><b><?php  echo "Criteria : ".$row1['criteria']; ?></b></div>
+                <div class="col-xs-2"><b><?php  echo "Relevance : ".$row1['criteria']; ?></b></div>
             </div>
             <?php 
             $i++;
@@ -90,7 +90,7 @@
                     ?>
                 </tr>
                 <?php
-                    $query = "select s1.Name,s1.USN,c.value from students s1,cb_feedback c,subfac f "
+                    $query = "select distinct  s1.Name,s1.USN,c.value from students s1,cb_feedback c,subfac f "
                         ."WHERE s1.usn=c.usn and f.subcode='".$_POST['sub_code']."' and f.idn='".$_SESSION['user']."' ";
                              $result = mysqli_query($db, $query);
                     if(mysqli_num_rows($result)>0) {
@@ -129,10 +129,11 @@
                 ?>
                 </caption>
                 <tr><th>Question</th>
-                    <th>Excellent(3)</th>
+                    <th>Excellent(4)</th>
+                    <th>Very Good(3)</th>
                     <th>Good(2)</th>
                     <th>Satisfactory(1)</th>
-                    <th>Average</th>
+                    <th>Percentage</th>
                     <th>Level</th>
                 </tr>
                 <?php
@@ -141,6 +142,11 @@
   if(isset($questions))   {  foreach ($questions as $qn) {
                                 echo "<tr>\n";
                                 echo "<td>".$i++."</td>";
+                                
+                                $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='4';";
+                                $p = mysqli_query($db, $query);
+                                $p_excel = mysqli_fetch_assoc($p);
+                                echo "<td>".$p_excel['count']."</td>";
                                 
                                 $query = "SELECT COUNT(*) as count FROM cb_feedback WHERE qn_id='".$qn."' AND value='3';";
                                 $p = mysqli_query($db, $query);
@@ -157,7 +163,7 @@
                                 $p_disagree = mysqli_fetch_assoc($p);
                                 echo "<td>".$p_disagree['count']."</td>";
                                 
-                                $avg = 100*($p_strongly['count']*3 + $p_fairly['count']*2 + $p_disagree['count'] )/(3*$total);
+                                $avg = 100*($p_excel['count'] * 4+$p_strongly['count']*3 + $p_fairly['count']*2 + $p_disagree['count'] )/(4*$total);
                                 echo "<td>".round($avg,2)."</td>";
                                 
                                 if($avg >= 90) {
